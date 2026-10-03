@@ -3,53 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZUDI Cosmetics — Premium Go'zallik Do'koni</title>
-    <meta name="description" content="ZUDI Cosmetics - Dekorativ kosmetika, terini parvarish qilish, Koreya go'zallik vositalari va parfyumeriya do'koni. Zufarova Dilnoza | Chiroy Estetisti">
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Montserrat:wght@200;300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+    <title>ZUDI Cosmetics — Haute Beauté & Soins de Luxe</title>
+    <meta name="description" content="ZUDI Cosmetics - Premium go'zallik do'koni. Dekorativ kosmetika, K-Beauty terini parvarish qilish, selektiv parfyumeriya. Zufarova Dilnoza | Chiroy Estetisti">
+    
+    <!-- Google Fonts: Cormorant Garamond, Montserrat, Playfair Display -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Montserrat:wght@200;300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <!-- Preloader -->
     <div id="preloader">
         <div class="preloader-inner">
-            <div class="preloader-logo">
-                <img src="logo.png" alt="ZUDI Cosmetics">
+            <div class="preloader-emblem">
+                <img src="logo_circular.png" alt="ZUDI Cosmetics" class="preloader-img">
+            </div>
+            <div class="preloader-text-group">
+                <span class="preloader-brand">ZUDI COSMETICS</span>
+                <span class="preloader-tagline">HAUTE BEAUTÉ & SOINS DE LUXE</span>
             </div>
             <div class="preloader-bar">
                 <div class="preloader-fill"></div>
             </div>
-            <p class="preloader-text">Go'zallik yuklanmoqda...</p>
         </div>
     </div>
 
     <!-- Navigation -->
     <nav id="main-nav">
-        <div class="nav-logo" onclick="goToSlide(0)" style="cursor: pointer;">
-            <img src="logo.png" alt="ZUDI" class="nav-logo-img">
+        <div class="nav-logo" onclick="goToSlide(0)">
+            <img src="logo_circular.png" alt="ZUDI" class="nav-logo-circular">
+            <div class="nav-brand-text">
+                <span class="brand-name">ZUDI</span>
+                <span class="brand-sub">COSMETICS</span>
+            </div>
         </div>
         <div class="nav-links">
             <a href="#hero" class="nav-link active" data-slide="0">Bosh sahifa</a>
-            <a href="#about" class="nav-link" data-slide="1">Biz haqimizda</a>
-            <a href="#products" class="nav-link" data-slide="2">Mahsulotlar</a>
-            <a href="#categories" class="nav-link" data-slide="3">Kategoriyalar</a>
-            <a href="#stats" class="nav-link" data-slide="4">Raqamlar</a>
-            <a href="#services" class="nav-link" data-slide="5">Xizmatlar</a>
-            <a href="#gallery" class="nav-link" data-slide="6">Galereya</a>
-            <a href="#contact" class="nav-link" data-slide="7">Aloqa</a>
+            <a href="#about" class="nav-link" data-slide="1">Brend falsafasi</a>
+            <a href="#products" class="nav-link" data-slide="2">Kolleksiya</a>
+            <a href="#categories" class="nav-link" data-slide="3">Yo'nalishlar</a>
+            <a href="#stats" class="nav-link" data-slide="4">Yutuqlar</a>
+            <a href="#services" class="nav-link" data-slide="5">Privilegiyalar</a>
+            <a href="#gallery" class="nav-link" data-slide="6">Lookbook</a>
+            <a href="#contact" class="nav-link" data-slide="7">Butik</a>
         </div>
         <div class="nav-actions">
-            <button id="btn-sound" class="nav-action-btn" title="Ovozni yoqish/o'chirish (S)">
-                <i class="fas fa-volume-up"></i>
-            </button>
-            <button id="btn-overview" class="nav-action-btn" title="Barcha slaydlar menyusi (M)">
+            <button id="btn-overview" class="nav-action-btn" title="Slaydlar xaritasi (M)">
                 <i class="fas fa-th-large"></i>
             </button>
-            <button id="btn-fullscreen" class="nav-action-btn" title="To'liq ekran rejimi (F)">
+            <button id="btn-fullscreen" class="nav-action-btn" title="To'liq ekran (F)">
                 <i class="fas fa-expand"></i>
             </button>
-            <a href="https://www.instagram.com/zudi_cosmetics/" target="_blank" class="social-icon" title="Instagram @zudi_cosmetics">
+            <a href="https://www.instagram.com/zudi_cosmetics/" target="_blank" class="nav-cta-btn" title="Instagram @zudi_cosmetics">
                 <i class="fab fa-instagram"></i>
+                <span>VIP Butik</span>
             </a>
         </div>
         <div class="hamburger" id="hamburger">
@@ -63,13 +75,13 @@
     <div class="mobile-menu" id="mobile-menu">
         <div class="mobile-menu-links">
             <a href="#hero" data-slide="0">Bosh sahifa</a>
-            <a href="#about" data-slide="1">Biz haqimizda</a>
-            <a href="#products" data-slide="2">Mahsulotlar</a>
-            <a href="#categories" data-slide="3">Kategoriyalar</a>
-            <a href="#stats" data-slide="4">Raqamlar</a>
-            <a href="#services" data-slide="5">Xizmatlar</a>
-            <a href="#gallery" data-slide="6">Galereya</a>
-            <a href="#contact" data-slide="7">Aloqa</a>
+            <a href="#about" data-slide="1">Brend falsafasi</a>
+            <a href="#products" data-slide="2">Kolleksiya</a>
+            <a href="#categories" data-slide="3">Yo'nalishlar</a>
+            <a href="#stats" data-slide="4">Yutuqlar</a>
+            <a href="#services" data-slide="5">Privilegiyalar</a>
+            <a href="#gallery" data-slide="6">Lookbook</a>
+            <a href="#contact" data-slide="7">Butik</a>
         </div>
     </div>
 
@@ -88,7 +100,7 @@
     <!-- Main Presentation Container -->
     <main id="presentation">
         
-        <!-- SLIDE 1: Hero -->
+        <!-- SLIDE 1: Hero (Cinematic Luxury Flagship) -->
         <section class="slide active" id="hero" data-index="0">
             <div class="slide-bg">
                 <div class="hero-video-bg">
@@ -99,47 +111,68 @@
                 </div>
                 <div class="floating-particles" id="particles-hero"></div>
             </div>
+            
             <div class="slide-content hero-content">
-                <div class="hero-badge animate-on-enter">
+                <!-- Circular Medallion -->
+                <div class="hero-emblem-wrap animate-on-enter">
+                    <div class="hero-emblem-glow"></div>
+                    <div class="hero-emblem-ring"></div>
+                    <img src="logo_circular.png" alt="ZUDI Cosmetics" class="hero-emblem-img">
+                </div>
+
+                <div class="hero-badge animate-on-enter delay-1">
                     <span class="badge-dot"></span>
-                    <span>Premium Go'zallik Do'koni</span>
+                    <span>HAUTE BEAUTÉ & MAQUILLAGE • EST. TASHKENT</span>
                 </div>
-                <div class="hero-logo-large animate-on-enter delay-1">
-                    <img src="logo.png" alt="ZUDI Cosmetics">
-                </div>
+
                 <h1 class="hero-title animate-on-enter delay-2">
-                    <span class="title-line">Go'zallik</span>
-                    <span class="title-line title-accent">San'ati</span>
+                    <span class="title-eyebrow">GO'ZALLIK VA NAFOSAT MAKONIGA XUSH KELIBSIZ</span>
+                    <span class="title-main">Go'zallik <em class="title-accent">San'ati</em></span>
                 </h1>
-                <p class="hero-subtitle animate-on-enter delay-3">Sizning go'zalligingiz — bizning ilhomimiz</p>
+
+                <p class="hero-subtitle animate-on-enter delay-3">
+                    Jahonning eng saralangan K-Beauty, Yevropa va selektiv parfyumeriya durdonalari. Shaxsiy chiroy estetisti nazoratidagi benuqson parvarish.
+                </p>
+
                 <div class="hero-cta animate-on-enter delay-4">
-                    <button class="btn-primary" onclick="goToSlide(1)">
-                        <span>Batafsil</span>
+                    <button class="btn-primary" onclick="goToSlide(2)">
+                        <span>Kolleksiyani Kashf Qiling</span>
                         <i class="fas fa-arrow-right"></i>
                     </button>
                     <a href="https://www.instagram.com/zudi_cosmetics/" target="_blank" class="btn-outline">
                         <i class="fab fa-instagram"></i>
-                        <span>Instagram</span>
+                        <span>@zudi_cosmetics</span>
                     </a>
                 </div>
+
                 <div class="hero-scroll-indicator animate-on-enter delay-5">
                     <div class="scroll-mouse">
                         <div class="scroll-dot"></div>
                     </div>
-                    <span>Pastga aylantiring</span>
+                    <span>Pastga suring</span>
                 </div>
             </div>
+
+            <!-- Architectural floating luxury badges -->
             <div class="hero-side-images">
-                <div class="hero-floating-img img-1 animate-on-enter delay-2">
-                    <img src="products_display.jpg" alt="Products">
+                <div class="hero-floating-card card-left animate-on-enter delay-2">
+                    <div class="hfc-icon"><i class="fas fa-certificate"></i></div>
+                    <div class="hfc-text">
+                        <strong>100% Original</strong>
+                        <span>Sertifikatlangan brendlar</span>
+                    </div>
                 </div>
-                <div class="hero-floating-img img-2 animate-on-enter delay-3">
-                    <img src="makeup_collection.jpg" alt="Makeup">
+                <div class="hero-floating-card card-right animate-on-enter delay-3">
+                    <div class="hfc-icon"><i class="fas fa-sparkles"></i></div>
+                    <div class="hfc-text">
+                        <strong>Zufarova Dilnoza</strong>
+                        <span>Chiroy Estetisti</span>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- SLIDE 2: About -->
+        <!-- SLIDE 2: About (The Maison Heritage) -->
         <section class="slide" id="about" data-index="1">
             <div class="slide-bg about-bg">
                 <div class="about-gradient"></div>
@@ -148,46 +181,50 @@
                 <div class="about-grid">
                     <div class="about-image-section animate-on-enter">
                         <div class="about-img-wrapper">
-                            <img src="store_interior.jpg" alt="ZUDI Cosmetics Store">
+                            <img src="store_interior.jpg" alt="ZUDI Cosmetics Flagship Boutique">
                             <div class="about-img-frame"></div>
+                            <div class="about-seal-badge">
+                                <img src="logo_circular.png" alt="Seal" class="seal-img">
+                            </div>
                         </div>
                         <div class="about-badge-float">
                             <div class="badge-circle">
                                 <span class="badge-number">29K+</span>
-                                <span class="badge-label">Obunachilar</span>
+                                <span class="badge-label">Go'zallik Ixlosmandlari</span>
                             </div>
                         </div>
                     </div>
                     <div class="about-text-section">
-                        <span class="section-tag animate-on-enter">Biz haqimizda</span>
+                        <span class="section-tag animate-on-enter">MAISON DE BEAUTÉ • MEROS</span>
                         <h2 class="section-title animate-on-enter delay-1">
-                            Zufarova Dilnoza
-                            <span class="title-highlight">Chiroy Estetisti</span>
+                            Estetik Mukammallik va
+                            <span class="title-highlight">Yuqori Did</span>
                         </h2>
                         <div class="about-description animate-on-enter delay-2">
-                            <p>ZUDI Cosmetics — bu nafaqat kosmetika do'koni, balki go'zallik madaniyatini rivojlantirishga bag'ishlangan premium brend. Biz sizga dunyoning eng yaxshi go'zallik brendlarini taqdim etamiz.</p>
-                            <p>Bizning do'konimiz dekorativ kosmetika, terini parvarish qilish vositalari, Koreya go'zallik mahsulotlari, Belarus brendlari va noyob parfyumeriya mahsulotlarini taklif etadi.</p>
+                            <p class="lead-quote">"Har bir ayolning go'zalligi — o'ziga xos takrorlanmas san'at asari. Bizning maqsadimiz bu go'zallikni eng toza va sifatli parvarish bilan nurlantirishdir."</p>
+                            <p class="lead-author">— <strong>Zufarova Dilnoza</strong>, Chiroy Estetisti & Asoschi</p>
+                            <p>ZUDI Cosmetics — Toshkent markazidagi go'zallik va estetik madaniyatni o'zida mujassam etgan nufuzli butik. Biz Koreya, Fransiya, Italiya va Yevropaning yetakchi kosmetika uylarining saralangan durdonalarini taqdim etamiz.</p>
                         </div>
                         <div class="about-features animate-on-enter delay-3">
                             <div class="feature-item">
-                                <div class="feature-icon"><i class="fas fa-gem"></i></div>
+                                <div class="feature-num">I</div>
                                 <div class="feature-text">
-                                    <h4>Premium Sifat</h4>
-                                    <p>Faqat sertifikatlangan mahsulotlar</p>
+                                    <h4>Global Asllik Standarti</h4>
+                                    <p>100% original, klinik sinovdan o'tgan brendlar</p>
                                 </div>
                             </div>
                             <div class="feature-item">
-                                <div class="feature-icon"><i class="fas fa-truck"></i></div>
+                                <div class="feature-num">II</div>
                                 <div class="feature-text">
-                                    <h4>Tezkor Yetkazib Berish</h4>
-                                    <p>Butun O'zbekiston bo'ylab</p>
+                                    <h4>Estetik Ekspertiza</h4>
+                                    <p>Terining individual tahlili va shaxsiy tavsiyalar</p>
                                 </div>
                             </div>
                             <div class="feature-item">
-                                <div class="feature-icon"><i class="fas fa-heart"></i></div>
+                                <div class="feature-num">III</div>
                                 <div class="feature-text">
-                                    <h4>Professional Maslahat</h4>
-                                    <p>Chiroy bo'yicha ekspert tavsiyalar</p>
+                                    <h4>Privileged Concierge</h4>
+                                    <p>O'zbekiston bo'ylab o'ta ehtiyotkor yetkazib berish</p>
                                 </div>
                             </div>
                         </div>
@@ -196,61 +233,64 @@
             </div>
         </section>
 
-        <!-- SLIDE 3: Products -->
+        <!-- SLIDE 3: Products (The Signature Curation) -->
         <section class="slide" id="products" data-index="2">
             <div class="slide-bg products-bg"></div>
             <div class="slide-content products-content">
                 <div class="products-header">
-                    <span class="section-tag animate-on-enter">Mahsulotlarimiz</span>
-                    <h2 class="section-title animate-on-enter delay-1">Eng Yaxshi <span class="title-highlight">Brendlar</span></h2>
-                    <p class="section-desc animate-on-enter delay-2">Dunyoning eng mashhur go'zallik brendlari bir joyda</p>
+                    <span class="section-tag animate-on-enter">SIGNATURE CURATION</span>
+                    <h2 class="section-title animate-on-enter delay-1">Saralangan <span class="title-highlight">Kolleksiya</span></h2>
+                    <p class="section-desc animate-on-enter delay-2">Dunyodagi eng talabchan go'zallik standartlariga javob beruvchi kolleksiya</p>
                 </div>
                 <div class="products-showcase">
                     <div class="product-card animate-on-enter delay-1">
                         <div class="product-img-wrapper">
-                            <img src="products_display.jpg" alt="Skincare">
+                            <img src="products_display.jpg" alt="Soins du Visage">
                             <div class="product-overlay">
-                                <span class="product-tag">Bestseller</span>
+                                <span class="product-tag">Curation No. 01</span>
                             </div>
                         </div>
                         <div class="product-info">
-                            <h3>Terini Parvarish</h3>
-                            <p>Serumlar, kremlar, maskalar va boshqalar</p>
+                            <span class="product-dept">K-BEAUTY & CLINICAL</span>
+                            <h3>Soins du Visage (Yuz Parvarishi)</h3>
+                            <p>Centella, peptidlar, niatsinamid va gialuron kislotali premium essensiyalar va kremlar</p>
                             <div class="product-brands">
-                                <span>Korean Beauty</span>
-                                <span>Premium</span>
+                                <span>Centella Glow</span>
+                                <span>Hydra Deep</span>
                             </div>
                         </div>
                     </div>
                     <div class="product-card animate-on-enter delay-2">
                         <div class="product-img-wrapper">
-                            <img src="makeup_collection.jpg" alt="Makeup">
+                            <img src="makeup_collection.jpg" alt="Le Maquillage">
                             <div class="product-overlay">
-                                <span class="product-tag">Yangi</span>
+                                <span class="product-tag">Curation No. 02</span>
                             </div>
                         </div>
                         <div class="product-info">
-                            <h3>Dekorativ Kosmetika</h3>
-                            <p>Lablar, ko'zlar, yuz uchun to'plamlar</p>
+                            <span class="product-dept">HAUTE COUTURE MAKEUP</span>
+                            <h3>Le Maquillage (Dekorativ)</h3>
+                            <p>Ipakdek mayin tonal asoslar, baxmal lab bo'yoqlari va professional vizaj palitralari</p>
                             <div class="product-brands">
-                                <span>Luxury</span>
-                                <span>Trending</span>
+                                <span>Velvet Matte</span>
+                                <span>Satin Glow</span>
                             </div>
                         </div>
                     </div>
                     <div class="product-card animate-on-enter delay-3">
                         <div class="product-img-wrapper">
-                            <img src="perfumery.jpg" alt="Perfumery">
+                            <img src="perfumery.jpg" alt="Haute Parfumerie">
                             <div class="product-overlay">
-                                <span class="product-tag">Ekskluziv</span>
+                                <span class="product-tag">Curation No. 03</span>
                             </div>
                         </div>
                         <div class="product-info">
-                            <h3>Parfyumeriya</h3>
-                            <p>Noyob va eksklyuziv atirlar kolleksiyasi</p>
+                            <span class="product-dept">NICHE & SELECTIVE</span>
+                            <h3>Haute Parfumerie (Noyob Atirlar)</h3>
+                            <p>Qaytarilmas shleyfga ega nozik, jozibador va unutilmas selektiv muattar hidlar</p>
                             <div class="product-brands">
-                                <span>Niche</span>
-                                <span>Designer</span>
+                                <span>Niche Exclusive</span>
+                                <span>Long Sillage</span>
                             </div>
                         </div>
                     </div>
@@ -258,56 +298,75 @@
             </div>
         </section>
 
-        <!-- SLIDE 4: Categories -->
+        <!-- SLIDE 4: Categories (The Luxury Departments) -->
         <section class="slide" id="categories" data-index="3">
             <div class="slide-bg categories-bg"></div>
             <div class="slide-content categories-content">
                 <div class="categories-header">
-                    <span class="section-tag animate-on-enter">Kategoriyalar</span>
-                    <h2 class="section-title animate-on-enter delay-1">Barcha <span class="title-highlight">Ehtiyojlar</span> Uchun</h2>
+                    <span class="section-tag animate-on-enter">LES DÉPARTEMENTS</span>
+                    <h2 class="section-title animate-on-enter delay-1">Go'zallik <span class="title-highlight">Yo'nalishlari</span></h2>
+                    <p class="section-desc animate-on-enter delay-2">Butikimizning har bir bo'limi alohida nafosat falsafasiga asoslangan</p>
                 </div>
                 <div class="categories-grid">
-                    <div class="category-tile animate-on-enter delay-1" style="--tile-color: #E8C4B8;">
-                        <div class="tile-icon"><i class="fas fa-spa"></i></div>
-                        <h3>Terini Parvarish</h3>
-                        <p>Tozalash, nemlash, oziqlantirish</p>
-                        <div class="tile-number">01</div>
+                    <div class="category-tile animate-on-enter delay-1">
+                        <div class="tile-top">
+                            <span class="tile-number">01</span>
+                            <div class="tile-icon"><i class="fas fa-spa"></i></div>
+                        </div>
+                        <h3>Soins Essentiels</h3>
+                        <p>Terini chuqur tozalash, nemlantirish va yoshartiruvchi dermokosmetika</p>
+                        <span class="tile-link">Batafsil <i class="fas fa-angle-right"></i></span>
                     </div>
-                    <div class="category-tile animate-on-enter delay-2" style="--tile-color: #C9A9A6;">
-                        <div class="tile-icon"><i class="fas fa-paint-brush"></i></div>
-                        <h3>Dekorativ Kosmetika</h3>
-                        <p>Yuz, ko'z, lab uchun</p>
-                        <div class="tile-number">02</div>
+                    <div class="category-tile animate-on-enter delay-2">
+                        <div class="tile-top">
+                            <span class="tile-number">02</span>
+                            <div class="tile-icon"><i class="fas fa-paint-brush"></i></div>
+                        </div>
+                        <h3>Couture Makeup</h3>
+                        <p>Yuqori pigmentli baxmal lab bo'yoqlari, tonal kremlar va tenlar</p>
+                        <span class="tile-link">Batafsil <i class="fas fa-angle-right"></i></span>
                     </div>
-                    <div class="category-tile animate-on-enter delay-3" style="--tile-color: #B8D4E3;">
-                        <div class="tile-icon"><i class="fas fa-flask"></i></div>
-                        <h3>Koreya Kosmetikasi</h3>
-                        <p>K-beauty sirlari</p>
-                        <div class="tile-number">03</div>
+                    <div class="category-tile animate-on-enter delay-3">
+                        <div class="tile-top">
+                            <span class="tile-number">03</span>
+                            <div class="tile-icon"><i class="fas fa-flask"></i></div>
+                        </div>
+                        <h3>K-Beauty Revolution</h3>
+                        <p>Dunyoni lol qoldirgan Koreys "Glass Skin" formulasining sir-asrorlari</p>
+                        <span class="tile-link">Batafsil <i class="fas fa-angle-right"></i></span>
                     </div>
-                    <div class="category-tile animate-on-enter delay-4" style="--tile-color: #D4C5A9;">
-                        <div class="tile-icon"><i class="fas fa-wind"></i></div>
-                        <h3>Parfyumeriya</h3>
-                        <p>Noyob hidlar kolleksiyasi</p>
-                        <div class="tile-number">04</div>
+                    <div class="category-tile animate-on-enter delay-4">
+                        <div class="tile-top">
+                            <span class="tile-number">04</span>
+                            <div class="tile-icon"><i class="fas fa-wind"></i></div>
+                        </div>
+                        <h3>Parfumerie Niche</h3>
+                        <p>Shaxsiyatni ifodalovchi noyob selektiv va fransuz atirlar kolleksiyasi</p>
+                        <span class="tile-link">Batafsil <i class="fas fa-angle-right"></i></span>
                     </div>
-                    <div class="category-tile animate-on-enter delay-5" style="--tile-color: #C5D4C0;">
-                        <div class="tile-icon"><i class="fas fa-leaf"></i></div>
-                        <h3>Belarus Brendlari</h3>
-                        <p>Tabiiy va samarali</p>
-                        <div class="tile-number">05</div>
+                    <div class="category-tile animate-on-enter delay-5">
+                        <div class="tile-top">
+                            <span class="tile-number">05</span>
+                            <div class="tile-icon"><i class="fas fa-leaf"></i></div>
+                        </div>
+                        <h3>Botanical Beauty</h3>
+                        <p>Belarus va Yevropaning eng sara tabiiy va bio-organik seriyalari</p>
+                        <span class="tile-link">Batafsil <i class="fas fa-angle-right"></i></span>
                     </div>
-                    <div class="category-tile animate-on-enter delay-6" style="--tile-color: #E3D5E8;">
-                        <div class="tile-icon"><i class="fas fa-magic"></i></div>
-                        <h3>Aksessuarlar</h3>
-                        <p>Cho'tkalar, asboblar</p>
-                        <div class="tile-number">06</div>
+                    <div class="category-tile animate-on-enter delay-6">
+                        <div class="tile-top">
+                            <span class="tile-number">06</span>
+                            <div class="tile-icon"><i class="fas fa-magic"></i></div>
+                        </div>
+                        <h3>Atelier Accessoires</h3>
+                        <p>Professional vizaj cho'tkalari va estetik asbob-uskunalar</p>
+                        <span class="tile-link">Batafsil <i class="fas fa-angle-right"></i></span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- SLIDE 5: Stats -->
+        <!-- SLIDE 5: Stats (Global Influence & Trust) -->
         <section class="slide" id="stats" data-index="4">
             <div class="slide-bg stats-bg">
                 <img src="beauty_model.jpg" alt="Background" class="stats-bg-img">
@@ -315,153 +374,178 @@
             </div>
             <div class="slide-content stats-content">
                 <div class="stats-header">
-                    <span class="section-tag animate-on-enter" style="color: #fff;">Raqamlar</span>
+                    <span class="section-tag animate-on-enter" style="color: var(--accent-champagne);">INFLUENCE & HERITAGE</span>
                     <h2 class="section-title animate-on-enter delay-1" style="color: #fff;">Bizning <span class="title-highlight">Yutuqlarimiz</span></h2>
+                    <p class="section-desc animate-on-enter delay-2" style="color: rgba(255,255,255,0.7);">Mijozlarimiz ishonchi — bizning eng oliy qadriyatimiz</p>
                 </div>
                 <div class="stats-grid">
                     <div class="stat-card animate-on-enter delay-1">
-                        <div class="stat-icon"><i class="fas fa-users"></i></div>
-                        <div class="stat-number" data-target="29000">0</div>
-                        <div class="stat-label">Instagram Obunachilar</div>
-                        <div class="stat-bar"><div class="stat-fill" style="width: 92%;"></div></div>
+                        <div class="stat-num-wrap">
+                            <div class="stat-number" data-target="29000">0</div>
+                            <span class="stat-plus">+</span>
+                        </div>
+                        <div class="stat-label">Go'zallik Ixlosmandlari</div>
+                        <p class="stat-subtext">Instagram @zudi_cosmetics obunachilari</p>
+                        <div class="stat-bar"><div class="stat-fill" style="width: 95%;"></div></div>
                     </div>
                     <div class="stat-card animate-on-enter delay-2">
-                        <div class="stat-icon"><i class="fas fa-images"></i></div>
-                        <div class="stat-number" data-target="202">0</div>
-                        <div class="stat-label">Postlar</div>
-                        <div class="stat-bar"><div class="stat-fill" style="width: 65%;"></div></div>
+                        <div class="stat-num-wrap">
+                            <div class="stat-number" data-target="500">0</div>
+                            <span class="stat-plus">+</span>
+                        </div>
+                        <div class="stat-label">Premium Mahsulotlar</div>
+                        <p class="stat-subtext">Saralangan va doimiy yangilanuvchi assortiment</p>
+                        <div class="stat-bar"><div class="stat-fill" style="width: 85%;"></div></div>
                     </div>
                     <div class="stat-card animate-on-enter delay-3">
-                        <div class="stat-icon"><i class="fas fa-box-open"></i></div>
-                        <div class="stat-number" data-target="500">0</div>
-                        <div class="stat-label">Mahsulotlar</div>
-                        <div class="stat-bar"><div class="stat-fill" style="width: 80%;"></div></div>
+                        <div class="stat-num-wrap">
+                            <div class="stat-number" data-target="50">0</div>
+                            <span class="stat-plus">+</span>
+                        </div>
+                        <div class="stat-label">Global Brendlar</div>
+                        <p class="stat-subtext">Koreya, Fransiya, Italiya, Belarus</p>
+                        <div class="stat-bar"><div class="stat-fill" style="width: 75%;"></div></div>
                     </div>
                     <div class="stat-card animate-on-enter delay-4">
-                        <div class="stat-icon"><i class="fas fa-star"></i></div>
-                        <div class="stat-number" data-target="50">0</div>
-                        <div class="stat-label">Brendlar</div>
-                        <div class="stat-bar"><div class="stat-fill" style="width: 70%;"></div></div>
+                        <div class="stat-num-wrap">
+                            <div class="stat-number" data-target="100">0</div>
+                            <span class="stat-plus">%</span>
+                        </div>
+                        <div class="stat-label">Asllik Kafolati</div>
+                        <p class="stat-subtext">Faqat 100% original sertifikatlangan sifat</p>
+                        <div class="stat-bar"><div class="stat-fill" style="width: 100%;"></div></div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- SLIDE 6: Services -->
+        <!-- SLIDE 6: Services (Client Privileges) -->
         <section class="slide" id="services" data-index="5">
             <div class="slide-bg services-bg"></div>
             <div class="slide-content services-content">
                 <div class="services-header">
-                    <span class="section-tag animate-on-enter">Xizmatlar</span>
-                    <h2 class="section-title animate-on-enter delay-1">Biz <span class="title-highlight">Taklif Etamiz</span></h2>
+                    <span class="section-tag animate-on-enter">PRIVILÈGES EXCLUSIFS</span>
+                    <h2 class="section-title animate-on-enter delay-1">Eksklyuziv <span class="title-highlight">Xizmatlar</span></h2>
+                    <p class="section-desc animate-on-enter delay-2">Har bir tashrifingiz va xaridingiz unutilmas zavq bag'ishlashi uchun</p>
                 </div>
                 <div class="services-grid">
                     <div class="service-card animate-on-enter delay-1">
+                        <span class="service-privilege-badge">PRIVILEGE I</span>
                         <div class="service-icon-wrap">
                             <div class="service-icon"><i class="fas fa-store"></i></div>
                             <div class="service-glow"></div>
                         </div>
-                        <h3>Retail Do'kon</h3>
-                        <p>Qulay va zamonaviy do'konimizda barcha mahsulotlarni ko'rib, sinab ko'rishingiz mumkin</p>
+                        <h3>Flagship Boutique</h3>
+                        <p>Nafis va zamonaviy do'konimizda barcha mahsulotlarni bevosita sinab ko'rish imkoniyati</p>
                         <ul class="service-features">
-                            <li><i class="fas fa-check"></i> Keng tanlash imkoniyati</li>
-                            <li><i class="fas fa-check"></i> Namuna sinash</li>
-                            <li><i class="fas fa-check"></i> Professional maslahat</li>
+                            <li><i class="fas fa-check"></i> Eksklyuziv testerlar</li>
+                            <li><i class="fas fa-check"></i> Qulay shaxsiy muhit</li>
+                            <li><i class="fas fa-check"></i> Professional konsyerj</li>
                         </ul>
                     </div>
                     <div class="service-card animate-on-enter delay-2">
+                        <span class="service-privilege-badge">PRIVILEGE II</span>
                         <div class="service-icon-wrap">
                             <div class="service-icon"><i class="fas fa-laptop"></i></div>
                             <div class="service-glow"></div>
                         </div>
-                        <h3>Online Do'kon</h3>
-                        <p>Uydan chiqmasdan xarid qiling — onlayn do'konimiz 24/7 ishlaydi</p>
+                        <h3>Digital Flagship</h3>
+                        <p>Uydan chiqmasdan istalgan vaqtda buyurtma bering — onlayn butikimiz 24/7 xizmatingizda</p>
                         <ul class="service-features">
-                            <li><i class="fas fa-check"></i> 24/7 buyurtma</li>
-                            <li><i class="fas fa-check"></i> Onlayn to'lov</li>
-                            <li><i class="fas fa-check"></i> Tezkor qayta ishlash</li>
+                            <li><i class="fas fa-check"></i> 24/7 onlayn xarid</li>
+                            <li><i class="fas fa-check"></i> Xavfsiz tezkor to'lov</li>
+                            <li><i class="fas fa-check"></i> Shaxsiy menejer nazorati</li>
                         </ul>
                     </div>
                     <div class="service-card animate-on-enter delay-3">
+                        <span class="service-privilege-badge">PRIVILEGE III</span>
+                        <div class="service-icon-wrap">
+                            <div class="service-icon"><i class="fas fa-user-md"></i></div>
+                            <div class="service-glow"></div>
+                        </div>
+                        <h3>Chiroy Diagnostikasi</h3>
+                        <p>Chiroy estetisti tomonidan terining individual turi tahlil qilinadi va to'g'ri reja tuziladi</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Terining ehtiyojlarini aniqlash</li>
+                            <li><i class="fas fa-check"></i> Shaxsiy parvarish rejasi</li>
+                            <li><i class="fas fa-check"></i> Natijani doimiy kuzatish</li>
+                        </ul>
+                    </div>
+                    <div class="service-card animate-on-enter delay-4">
+                        <span class="service-privilege-badge">PRIVILEGE IV</span>
                         <div class="service-icon-wrap">
                             <div class="service-icon"><i class="fas fa-shipping-fast"></i></div>
                             <div class="service-glow"></div>
                         </div>
-                        <h3>Yetkazib Berish</h3>
-                        <p>Butun O'zbekiston bo'ylab tezkor va ishonchli yetkazib berish xizmati</p>
+                        <h3>White-Glove Delivery</h3>
+                        <p>O'zbekiston bo'ylab o'ta ehtiyotkor, sovg'abop qadoqda ishonchli yetkazib berish xizmati</p>
                         <ul class="service-features">
-                            <li><i class="fas fa-check"></i> Toshkent — 1 kun</li>
-                            <li><i class="fas fa-check"></i> Viloyatlar — 2-3 kun</li>
-                            <li><i class="fas fa-check"></i> Kafolatlangan xavfsiz qadoqlash</li>
-                        </ul>
-                    </div>
-                    <div class="service-card animate-on-enter delay-4">
-                        <div class="service-icon-wrap">
-                            <div class="service-icon"><i class="fas fa-hand-holding-heart"></i></div>
-                            <div class="service-glow"></div>
-                        </div>
-                        <h3>Konsultatsiya</h3>
-                        <p>Chiroy estetisti tomonidan shaxsiy maslahat va teri tahlili xizmati</p>
-                        <ul class="service-features">
-                            <li><i class="fas fa-check"></i> Teri tahlili</li>
-                            <li><i class="fas fa-check"></i> Shaxsiy dastur</li>
-                            <li><i class="fas fa-check"></i> Davomiy qo'llab-quvvatlash</li>
+                            <li><i class="fas fa-check"></i> Toshkent — 1 kunda yetkazish</li>
+                            <li><i class="fas fa-check"></i> Viloyatlar — 2-3 kunda ekspress</li>
+                            <li><i class="fas fa-check"></i> Eksklyuziv sovg'a qutisi</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- SLIDE 7: Gallery -->
+        <!-- SLIDE 7: Gallery (Lookbook Visuals) -->
         <section class="slide" id="gallery" data-index="6">
             <div class="slide-bg gallery-bg"></div>
             <div class="slide-content gallery-content">
                 <div class="gallery-header">
-                    <span class="section-tag animate-on-enter">Galereya</span>
-                    <h2 class="section-title animate-on-enter delay-1">Go'zallik <span class="title-highlight">Dunyosi</span></h2>
+                    <span class="section-tag animate-on-enter">LE LOOKBOOK</span>
+                    <h2 class="section-title animate-on-enter delay-1">Go'zallik <span class="title-highlight">Fotoxronikasi</span></h2>
+                    <p class="section-desc animate-on-enter delay-2">Do'konimiz hayoti, mahsulotlar estetikasi va go'zallik lahzalari</p>
                 </div>
                 <div class="gallery-mosaic animate-on-enter delay-2">
                     <div class="gallery-item gi-1">
-                        <img src="store_interior.jpg" alt="Store">
+                        <img src="store_interior.jpg" alt="Flagship Boutique Interior">
                         <div class="gallery-item-overlay">
-                            <span>Do'kon Interieri</span>
+                            <span class="lookbook-tag">FLAGSHIP ATMOSPHERE</span>
+                            <h4>Boutique Interieri</h4>
                         </div>
                     </div>
                     <div class="gallery-item gi-2">
-                        <img src="products_display.jpg" alt="Products">
+                        <img src="products_display.jpg" alt="Clinical Skincare">
                         <div class="gallery-item-overlay">
-                            <span>Skincare</span>
+                            <span class="lookbook-tag">SKINCARE HAUTE</span>
+                            <h4>Dermokosmetika</h4>
                         </div>
                     </div>
                     <div class="gallery-item gi-3">
-                        <img src="korean_beauty.jpg" alt="K-Beauty">
+                        <img src="korean_beauty.jpg" alt="K-Beauty Glow">
                         <div class="gallery-item-overlay">
-                            <span>K-Beauty</span>
+                            <span class="lookbook-tag">K-BEAUTY GLOW</span>
+                            <h4>Koreys Estetikasi</h4>
                         </div>
                     </div>
                     <div class="gallery-item gi-4">
-                        <img src="makeup_collection.jpg" alt="Makeup">
+                        <img src="makeup_collection.jpg" alt="Couture Makeup">
                         <div class="gallery-item-overlay">
-                            <span>Makeup</span>
+                            <span class="lookbook-tag">LE MAQUILLAGE</span>
+                            <h4>Dekorativ Kolleksiya</h4>
                         </div>
                     </div>
                     <div class="gallery-item gi-5">
-                        <img src="perfumery.jpg" alt="Perfumery">
+                        <img src="perfumery.jpg" alt="Selective Perfumes">
                         <div class="gallery-item-overlay">
-                            <span>Parfyumeriya</span>
+                            <span class="lookbook-tag">NICHE EXTRACTS</span>
+                            <h4>Selektiv Parfyumeriya</h4>
                         </div>
                     </div>
                     <div class="gallery-item gi-6">
-                        <img src="beauty_model.jpg" alt="Beauty">
+                        <img src="beauty_model.jpg" alt="Radiant Beauty">
                         <div class="gallery-item-overlay">
-                            <span>Go'zallik</span>
+                            <span class="lookbook-tag">ICONIC ELEGANCE</span>
+                            <h4>Nafosat Timsoli</h4>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- SLIDE 8: Contact -->
+        <!-- SLIDE 8: Contact (The Private Concierge) -->
         <section class="slide" id="contact" data-index="7">
             <div class="slide-bg contact-bg">
                 <div class="contact-gradient"></div>
@@ -469,29 +553,29 @@
             <div class="slide-content contact-content">
                 <div class="contact-grid">
                     <div class="contact-info-section">
-                        <span class="section-tag animate-on-enter">Bog'lanish</span>
+                        <span class="section-tag animate-on-enter">LE CONCIERGE PRIVÉ</span>
                         <h2 class="section-title animate-on-enter delay-1">Biz Bilan <span class="title-highlight">Bog'laning</span></h2>
-                        <p class="contact-desc animate-on-enter delay-2">Go'zallik sayohatingizni biz bilan birga boshlang. Har qanday savol yoki buyurtma uchun biz bilan bog'laning.</p>
+                        <p class="contact-desc animate-on-enter delay-2">Go'zallik sayohatingizni biz bilan birga boshlang. Shaxsiy maslahat yoki buyurtma uchun har doim xizmatingizdamiz.</p>
                         
                         <div class="contact-cards animate-on-enter delay-3">
                             <div class="contact-card">
                                 <div class="contact-card-icon"><i class="fab fa-instagram"></i></div>
                                 <div class="contact-card-info">
-                                    <h4>Instagram</h4>
+                                    <h4>Rasmiy Instagram</h4>
                                     <a href="https://www.instagram.com/zudi_cosmetics/" target="_blank">@zudi_cosmetics</a>
                                 </div>
                             </div>
                             <div class="contact-card">
                                 <div class="contact-card-icon"><i class="fas fa-map-marker-alt"></i></div>
                                 <div class="contact-card-info">
-                                    <h4>Manzil</h4>
-                                    <p>O'zbekiston</p>
+                                    <h4>Butik Manzili</h4>
+                                    <p>Toshkent shahri, O'zbekiston</p>
                                 </div>
                             </div>
                             <div class="contact-card">
                                 <div class="contact-card-icon"><i class="fas fa-clock"></i></div>
                                 <div class="contact-card-info">
-                                    <h4>Ish Vaqti</h4>
+                                    <h4>Ish Tartibi</h4>
                                     <p>Har kuni: 09:00 — 21:00</p>
                                 </div>
                             </div>
@@ -499,35 +583,39 @@
                                 <div class="contact-card-icon"><i class="fas fa-truck"></i></div>
                                 <div class="contact-card-info">
                                     <h4>Yetkazib Berish</h4>
-                                    <p>Butun O'zbekiston bo'ylab</p>
+                                    <p>Butun O'zbekiston bo'ylab ekspress</p>
                                 </div>
                             </div>
                         </div>
                     </div>
+
                     <div class="contact-cta-section animate-on-enter delay-4">
                         <div class="cta-card">
-                            <div class="cta-logo">
-                                <img src="logo.png" alt="ZUDI">
+                            <div class="cta-emblem-wrap">
+                                <img src="logo_circular.png" alt="ZUDI" class="cta-emblem-img">
                             </div>
                             <h3>Go'zallik Sizdan Boshlanadi</h3>
-                            <p>Bizning Instagram sahifamizga obuna bo'ling va eng so'nggi yangiliklar, aksiyalar va go'zallik maslahatlari haqida birinchi bo'lib xabardor bo'ling!</p>
+                            <p>Bizning Instagram oilamizga qo'shiling va eng so'nggi go'zallik tendensiyalari, yangi mahsulotlar va maxsus takliflardan xabardor bo'ling!</p>
+                            
                             <a href="https://www.instagram.com/zudi_cosmetics/" target="_blank" class="btn-instagram">
                                 <i class="fab fa-instagram"></i>
-                                <span>Instagramga O'tish</span>
+                                <span>Instagram Sahifasiga O'tish</span>
                             </a>
+
                             <div class="cta-stats">
                                 <div class="cta-stat">
-                                    <strong>29K+</strong>
+                                    <strong>29.4K+</strong>
                                     <span>Obunachilar</span>
                                 </div>
                                 <div class="cta-stat">
-                                    <strong>202</strong>
-                                    <span>Postlar</span>
+                                    <strong>200+</strong>
+                                    <span>Estetik Postlar</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
                 <div class="contact-footer animate-on-enter delay-5">
                     <p>© 2024 ZUDI Cosmetics. Barcha huquqlar himoyalangan. | Zufarova Dilnoza — Chiroy Estetisti</p>
                 </div>
@@ -537,10 +625,10 @@
 
     <!-- Slide Navigation Arrows -->
     <div class="slide-nav">
-        <button class="slide-nav-btn prev" id="prev-btn" onclick="prevSlide()">
+        <button class="slide-nav-btn prev" id="prev-btn" onclick="prevSlide()" title="Oldingi slayd">
             <i class="fas fa-chevron-up"></i>
         </button>
-        <button class="slide-nav-btn next" id="next-btn" onclick="nextSlide()">
+        <button class="slide-nav-btn next" id="next-btn" onclick="nextSlide()" title="Keyingi slayd">
             <i class="fas fa-chevron-down"></i>
         </button>
     </div>
@@ -563,10 +651,10 @@
         <div class="overview-container">
             <div class="overview-header">
                 <div class="overview-title-wrap">
-                    <img src="logo.png" alt="ZUDI" class="overview-logo">
+                    <img src="logo_circular.png" alt="ZUDI" class="overview-logo-circular">
                     <div>
                         <h3>Slaydlar Xaritasi</h3>
-                        <p>Istalgan bo'limga tezkor o'tish</p>
+                        <p>ZUDI Cosmetics Butik Taqdimoti</p>
                     </div>
                 </div>
                 <button id="overview-close" class="overview-close-btn" title="Yopish (ESC)">
@@ -583,48 +671,48 @@
                 <div class="overview-card" data-slide="1">
                     <span class="ov-badge">02</span>
                     <div class="ov-icon"><i class="fas fa-sparkles"></i></div>
-                    <h4>Biz haqimizda</h4>
-                    <p>Zufarova Dilnoza</p>
+                    <h4>Brend falsafasi</h4>
+                    <p>Zufarova Dilnoza • Chiroy Estetisti</p>
                 </div>
                 <div class="overview-card" data-slide="2">
                     <span class="ov-badge">03</span>
                     <div class="ov-icon"><i class="fas fa-gem"></i></div>
-                    <h4>Mahsulotlar</h4>
-                    <p>Bestseller Brendlar</p>
+                    <h4>Kolleksiya</h4>
+                    <p>Saralangan Bestsellerlar</p>
                 </div>
                 <div class="overview-card" data-slide="3">
                     <span class="ov-badge">04</span>
                     <div class="ov-icon"><i class="fas fa-th-large"></i></div>
-                    <h4>Kategoriyalar</h4>
-                    <p>6 ta asosiy yo'nalish</p>
+                    <h4>Yo'nalishlar</h4>
+                    <p>6 ta asosiy go'zallik bo'limi</p>
                 </div>
                 <div class="overview-card" data-slide="4">
                     <span class="ov-badge">05</span>
                     <div class="ov-icon"><i class="fas fa-chart-line"></i></div>
-                    <h4>Raqamlar</h4>
+                    <h4>Yutuqlar</h4>
                     <p>29K+ Obunachilar & Yutuqlar</p>
                 </div>
                 <div class="overview-card" data-slide="5">
                     <span class="ov-badge">06</span>
                     <div class="ov-icon"><i class="fas fa-concierge-bell"></i></div>
-                    <h4>Xizmatlar</h4>
-                    <p>Retail, Online & Maslahat</p>
+                    <h4>Privilegiyalar</h4>
+                    <p>Flagship, Online & Maslahat</p>
                 </div>
                 <div class="overview-card" data-slide="6">
                     <span class="ov-badge">07</span>
                     <div class="ov-icon"><i class="fas fa-images"></i></div>
-                    <h4>Galereya</h4>
-                    <p>Go'zallik Dunyosi</p>
+                    <h4>Lookbook</h4>
+                    <p>Fotoxronika & Galereya</p>
                 </div>
                 <div class="overview-card" data-slide="7">
                     <span class="ov-badge">08</span>
                     <div class="ov-icon"><i class="fab fa-instagram"></i></div>
-                    <h4>Bog'lanish</h4>
-                    <p>Instagram & Aloqa</p>
+                    <h4>Butik & Aloqa</h4>
+                    <p>Instagram & VIP Concierge</p>
                 </div>
             </div>
             <div class="overview-footer">
-                <span>💡 Klaviaturada <strong>[M]</strong> xarita, <strong>[F]</strong> to'liq ekran, <strong>[S]</strong> ovoz</span>
+                <span>💡 Klaviaturada <strong>[M]</strong> xarita, <strong>[F]</strong> to'liq ekran</span>
             </div>
         </div>
     </div>
@@ -634,7 +722,6 @@
         <span class="hint-item"><kbd>↑</kbd><kbd>↓</kbd> Navigatsiya</span>
         <span class="hint-item"><kbd>M</kbd> Xarita</span>
         <span class="hint-item"><kbd>F</kbd> Ekran</span>
-        <span class="hint-item"><kbd>S</kbd> Ovoz</span>
     </div>
 
     <script src="script.js"></script>

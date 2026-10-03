@@ -1,5 +1,5 @@
 /* ============================================
-   ZUDI COSMETICS — Ultra-Performance Presentation Script
+   ZUDI COSMETICS — Haute Beauté Presentation Script
    ============================================ */
 
 (function() {
@@ -12,7 +12,6 @@
     let touchStartY = 0;
     let touchEndY = 0;
     const ANIMATION_DURATION = 650;
-    let isSoundEnabled = true;
 
     // ===== DOM Elements =====
     const slides = document.querySelectorAll('.slide');
@@ -27,59 +26,12 @@
     const preloader = document.getElementById('preloader');
 
     // Controls & Modal Elements
-    const btnSound = document.getElementById('btn-sound');
     const btnOverview = document.getElementById('btn-overview');
     const btnFullscreen = document.getElementById('btn-fullscreen');
     const overviewModal = document.getElementById('overview-modal');
     const overviewClose = document.getElementById('overview-close');
     const overviewBackdrop = document.getElementById('overview-backdrop');
     const overviewCards = document.querySelectorAll('.overview-card');
-
-    // ===== Web Audio API Sound Chime =====
-    let audioCtx = null;
-    function playSlideSound() {
-        if (!isSoundEnabled) return;
-        try {
-            if (!audioCtx) {
-                const AudioContext = window.AudioContext || window.webkitAudioContext;
-                if (AudioContext) audioCtx = new AudioContext();
-            }
-            if (audioCtx && audioCtx.state === 'suspended') {
-                audioCtx.resume();
-            }
-            if (audioCtx) {
-                const osc = audioCtx.createOscillator();
-                const gain = audioCtx.createGain();
-                
-                // Soft luxury bell harmonic (528Hz crystal resonance)
-                osc.type = 'sine';
-                osc.frequency.setValueAtTime(528, audioCtx.currentTime);
-                osc.frequency.exponentialRampToValueAtTime(1056, audioCtx.currentTime + 0.15);
-                
-                gain.gain.setValueAtTime(0.04, audioCtx.currentTime);
-                gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 0.35);
-                
-                osc.connect(gain);
-                gain.connect(audioCtx.destination);
-                
-                osc.start();
-                osc.stop(audioCtx.currentTime + 0.35);
-            }
-        } catch (e) {
-            // Audio policy fallback
-        }
-    }
-
-    // Toggle Sound
-    if (btnSound) {
-        btnSound.addEventListener('click', function() {
-            isSoundEnabled = !isSoundEnabled;
-            btnSound.innerHTML = isSoundEnabled 
-                ? '<i class="fas fa-volume-up"></i>' 
-                : '<i class="fas fa-volume-mute" style="opacity: 0.5;"></i>';
-            if (isSoundEnabled) playSlideSound();
-        });
-    }
 
     // Toggle Fullscreen
     function toggleFullscreen() {
@@ -160,16 +112,13 @@
     window.addEventListener('load', function() {
         setTimeout(initPresentation, 400);
     });
-    setTimeout(initPresentation, 1500); // Safety fallback
+    setTimeout(initPresentation, 1400); // Safety fallback
     if (preloader) preloader.addEventListener('click', initPresentation);
 
     // ===== Slide Navigation =====
     function goToSlide(index, force) {
         if (!force && (isAnimating || index === currentSlide || index < 0 || index >= totalSlides)) return;
         isAnimating = true;
-
-        // Sound effect
-        if (!force) playSlideSound();
 
         // Deactivate all slides
         slides.forEach(function(s) {
@@ -278,11 +227,11 @@
 
         if (now - lastScrollTime < scrollCooldown) return;
 
-        if (wheelDeltaAccumulator > 35) {
+        if (wheelDeltaAccumulator > 30) {
             nextSlide();
             lastScrollTime = now;
             wheelDeltaAccumulator = 0;
-        } else if (wheelDeltaAccumulator < -35) {
+        } else if (wheelDeltaAccumulator < -30) {
             prevSlide();
             lastScrollTime = now;
             wheelDeltaAccumulator = 0;
@@ -329,12 +278,6 @@
         // Fullscreen toggle (F)
         if (e.key === 'f' || e.key === 'F') {
             toggleFullscreen();
-            return;
-        }
-
-        // Sound toggle (S)
-        if (e.key === 's' || e.key === 'S') {
-            if (btnSound) btnSound.click();
             return;
         }
 
@@ -415,16 +358,16 @@
                 if (target >= 1000) {
                     counter.textContent = (current / 1000).toFixed(1) + 'K';
                 } else {
-                    counter.textContent = current + '+';
+                    counter.textContent = current;
                 }
 
                 if (progress < 1) {
                     requestAnimationFrame(updateCounter);
                 } else {
                     if (target >= 1000) {
-                        counter.textContent = (target / 1000).toFixed(0) + 'K+';
+                        counter.textContent = (target / 1000).toFixed(0) + 'K';
                     } else {
-                        counter.textContent = target + '+';
+                        counter.textContent = target;
                     }
                 }
             }
@@ -450,7 +393,7 @@
         if (!container || container.children.length > 0) return;
 
         const fragment = document.createDocumentFragment();
-        for (let i = 0; i < 22; i++) {
+        for (let i = 0; i < 20; i++) {
             const particle = document.createElement('div');
             particle.className = 'particle';
             particle.style.left = Math.random() * 100 + '%';
@@ -459,7 +402,7 @@
             particle.style.height = size + 'px';
             particle.style.animationDuration = (Math.random() * 8 + 7) + 's';
             particle.style.animationDelay = (Math.random() * 6) + 's';
-            particle.style.opacity = Math.random() * 0.4 + 0.15;
+            particle.style.opacity = Math.random() * 0.35 + 0.15;
             fragment.appendChild(particle);
         }
         container.appendChild(fragment);
