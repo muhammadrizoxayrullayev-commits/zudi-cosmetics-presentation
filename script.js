@@ -449,6 +449,137 @@
     window.openProductDetail = openProductDetail;
     window.closeProductDetail = closeProductDetail;
 
+    // =========================================================
+    // SMART AI BEAUTY ADVISOR & 'NEGA AYNAN ZUDI?' CONTROLLER
+    // =========================================================
+    const AI_ADVICE_DATABASE = {
+        'glass-skin': {
+            icon: 'fas fa-tint',
+            title: 'Koreys "Glass Skin" (Oyna Kabi Tiniq va Nurli Teri) Formulalari',
+            whyZudi: 'Bozorda Koreys vositalarining arzon replikalari juda ko\'p bo\'lib, ular poralarni bekitib toshma chiqaradi. ZUDI Cosmetics esa bevosita Janubiy Koreya (Seul) laboratoriyalaridan keltirilgan, KFDA xalqaro sertifikatiga ega 100% asl partiyalarni kafolatlaydi va tonerni bir necha bor qatlamlab singdirish orqali haqiqiy "oyna terisi"ga erishishni o\'rgatadi.',
+            bestMatch: 'Beauty of Joseon (Glow Serum: Propolis + Niacinamide) + Anua Heartleaf 77% Soothing Toner + Laneige Water Bank Moisture Cream',
+            activeIngredients: 'Centella Asiatica 84%, Gialuron kislotasi (5 xil molekulyar og\'irlik), Propolis (60%) va Guruch kepagi ekstrakti',
+            expectedResult: '7 kunda yuzdagi quruqlik va xiralik yo\'qoladi. 14 kunda yuz ichkaridan namlangan, oyna kabi silliq va nurlanuvchi holatga keladi.',
+            estheticianTip: 'Zufarova Dilnoza: "Glass skin siri — tonerni kamida 2-3 marta qatlamlab singdirish va so\'ngra namlikni peptidli krem bilan qulflashdir."',
+            actionText: 'Glass Skin To\'plamini Instagramda Buyurtma Qilish'
+        },
+        'acne-pores': {
+            icon: 'fas fa-shield-virus',
+            title: 'Akne, Qizarish, Kengaygan Poralarni Davolash & Tiklash',
+            whyZudi: 'Ko\'pchilik noto\'g\'ri spirtli vositalar ishlatib, terining lipid to\'sig\'ini buzib qo\'yadi. ZUDI da chiroy estetisti nazorati ostida teri to\'sig\'ini shikastlamasdan, akne bakteriyalarini yo\'qotuvchi va poralarni chuqur tozalovchi nozik klinik formulalar beriladi.',
+            bestMatch: 'COSRX Snail Mucin 96 Essence + Anua Heartleaf Pore Control Cleansing Oil + COSRX Centella Blemish Cream',
+            activeIngredients: 'Centella Asiatica (84%), Salitsil (BHA) kislotasi, Keramidlar kompleksi va Choy daraxti ekstrakti',
+            expectedResult: '3 kunda qizarish va yallig\'lanish bosiladi. 10 kunda poralar torayib, teri relyefi sezilarli darajada tekislanadi.',
+            estheticianTip: 'Zufarova Dilnoza: "Aknega moyil teriga birinchi navbatda tinchlantiruvchi Centella va to\'g\'ri ikki bosqichli tozalash kerak — terini aslo quritib tashlamang."',
+            actionText: 'Akne & Pora Parvarishini So\'rash'
+        },
+        'niche-sillage': {
+            icon: 'fas fa-wind',
+            title: '24 Soatlik Poydor Shleyfli Niche & Selektiv Iforlar',
+            whyZudi: 'Ommaviy do\'konlarda selektiv atirlarning 100ml flakoni $200-$400 turadi va yoqmay qolsa behuda pul ketadi. ZUDI butikida esa har bir mijoz uchun original flakondan 3ml, 5ml, 10ml, 15ml sof shisha atomayzerga Otlivant qilib beriladi. Kichik narxga Parij va Nitssaning eng qimmat iforlarini sinash mumkin.',
+            bestMatch: 'Marc-Antoine Barrois (Ganymede) + MFK (Baccarat Rouge 540 Extrait) + Byredo (Bal d\'Afrique) Otlivantlari',
+            activeIngredients: 'Tabiiy Ambergris (kulrang amber), Akigalawood, Damashq atirguli va Madagaskar vanili konsentrati (25-30%)',
+            expectedResult: 'Kiyimda 24-48 soatdan ortiq saqlanuvchi, siz o\'tganingizdan keyin ham atrofingizdagi insonlarni maftun etuvchi oliyjanob shleyf.',
+            estheticianTip: 'Zufarova Dilnoza: "Selektiv atir — sizning xarakteringiz. 5ml otlivant bilan 1 oy davomida iforni terida bemalol sinab ko\'rishingiz mumkin."',
+            actionText: 'Original Otlivantlarni Tanlash'
+        },
+        'velvet-makeup': {
+            icon: 'fas fa-feather',
+            title: 'Fotoshop Effekti Beruvchi, Terida Sezilmaydigan Baxmal Vizaj',
+            whyZudi: 'Oddiy dekorativ vositalar yuzda og\'ir niqob hosil qiladi va ajinlarga to\'planib qoladi. ZUDI kolleksiyasidagi ipakdek yengil koutyur bo\'yoqlari terining tabiiy nafas olishini ta\'minlaydi va 16 soat davomida o\'chib ketmaydi.',
+            bestMatch: 'Luminous Silk Foundation + Velvet Rose Lipsticks + Rose Gold 18-Shade Palette + Rose Quartz Roller',
+            activeIngredients: 'Ipak mineral mikronlari, E vitamini, Argan va Jojoba oziqlantiruvchi tabiiy moylari',
+            expectedResult: '16 soat davomida o\'zgarmaydigan, yuzni yoshartiruvchi, fotokameralar oldida mayin baxmal ko\'rinish.',
+            estheticianTip: 'Zufarova Dilnoza: "Go\'zal vizajning siri — teriga mos tonal asos va baxmal lab bo\'yog\'i kontrastidadir."',
+            actionText: 'Vizajist Maslahatini Olish'
+        }
+    };
+
+    function switchWhyTab(tabName) {
+        const tabs = ['matrix', 'ai', 'privileges'];
+        tabs.forEach(function(t) {
+            const btn = document.getElementById('wtab-' + t);
+            const panel = document.getElementById('wpanel-' + t);
+            if (btn) btn.classList.toggle('active', t === tabName);
+            if (panel) panel.classList.toggle('active', t === tabName);
+        });
+
+        if (tabName === 'ai') {
+            runAiAnalysis('glass-skin');
+        }
+    }
+
+    function runAiAnalysis(goalKey) {
+        const data = AI_ADVICE_DATABASE[goalKey] || AI_ADVICE_DATABASE['glass-skin'];
+        const chips = document.querySelectorAll('.ai-chip');
+        chips.forEach(function(chip) {
+            chip.classList.toggle('active', chip.id === 'chip-' + goalKey);
+        });
+
+        const resultCard = document.getElementById('ai-result-card');
+        if (!resultCard) return;
+
+        // Show brief luxury scanning state
+        resultCard.innerHTML = `
+            <div class="ai-scanning-state">
+                <div class="ai-scan-icon"><i class="fas fa-microchip"></i></div>
+                <div class="ai-scan-text">
+                    <h4>Sun'iy Intellekt Tahlil Qilmoqda...</h4>
+                    <p>ZUDI estetik laboratoriyasi ma'lumotlar bazasi bilan solishtirilmoqda</p>
+                </div>
+            </div>
+        `;
+
+        setTimeout(function() {
+            resultCard.innerHTML = `
+                <div class="ai-card-inner">
+                    <div class="ai-card-top">
+                        <div class="ai-badge-group">
+                            <span class="ai-status-pill"><i class="fas fa-check-circle"></i> AI TAHLIL YAKUNLANDI</span>
+                            <span class="ai-match-pill"><i class="fas fa-sparkles"></i> 100% ANIQLIK</span>
+                        </div>
+                        <h3 class="ai-result-title"><i class="${data.icon}"></i> ${data.title}</h3>
+                    </div>
+
+                    <div class="ai-rationale-box">
+                        <div class="ai-box-badge"><i class="fas fa-lightbulb"></i> NEGA AYNAN ZUDI TANLANISHI SHART?</div>
+                        <p>${data.whyZudi}</p>
+                    </div>
+
+                    <div class="ai-details-grid">
+                        <div class="ai-detail-item">
+                            <div class="ai-item-label"><i class="fas fa-crown"></i> Tavsiya Etiluvchi ZUDI Formulalari:</div>
+                            <div class="ai-item-val">${data.bestMatch}</div>
+                        </div>
+                        <div class="ai-detail-item">
+                            <div class="ai-item-label"><i class="fas fa-flask"></i> Faol Moddalar (Ingredients):</div>
+                            <div class="ai-item-val">${data.activeIngredients}</div>
+                        </div>
+                        <div class="ai-detail-item">
+                            <div class="ai-item-label"><i class="fas fa-hourglass-half"></i> Kutiladigan Aniq Natija:</div>
+                            <div class="ai-item-val result-highlight">${data.expectedResult}</div>
+                        </div>
+                        <div class="ai-detail-item quote-item">
+                            <div class="ai-item-label"><i class="fas fa-user-md"></i> Chiroy Estetisti Zufarova Dilnozadan:</div>
+                            <div class="ai-item-val expert-val">${data.estheticianTip}</div>
+                        </div>
+                    </div>
+
+                    <div class="ai-card-footer">
+                        <a href="https://www.instagram.com/zudi_cosmetics/" target="_blank" class="btn-primary">
+                            <i class="fab fa-instagram"></i>
+                            <span>${data.actionText}</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            `;
+        }, 180);
+    }
+
+    window.switchWhyTab = switchWhyTab;
+    window.runAiAnalysis = runAiAnalysis;
+
     // Toggle Fullscreen
     function toggleFullscreen() {
         if (!document.fullscreenElement) {
@@ -510,6 +641,7 @@
         }
         goToSlide(0, true);
         createParticles();
+        runAiAnalysis('glass-skin');
 
         // Autoplay background video smoothly
         const heroVideo = document.getElementById('hero-bg-video');

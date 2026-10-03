@@ -48,7 +48,7 @@
             <a href="#products" class="nav-link" data-slide="2">Kolleksiya</a>
             <a href="#categories" class="nav-link" data-slide="3">Yo'nalishlar</a>
             <a href="#stats" class="nav-link" data-slide="4">Yutuqlar</a>
-            <a href="#services" class="nav-link" data-slide="5">Privilegiyalar</a>
+            <a href="#services" class="nav-link" data-slide="5">Nega ZUDI? <span class="nav-ai-pill"><i class="fas fa-sparkles"></i> AI</span></a>
             <a href="#gallery" class="nav-link" data-slide="6">Lookbook</a>
             <a href="#contact" class="nav-link" data-slide="7">Butik</a>
         </div>
@@ -79,7 +79,7 @@
             <a href="#products" data-slide="2">Kolleksiya</a>
             <a href="#categories" data-slide="3">Yo'nalishlar</a>
             <a href="#stats" data-slide="4">Yutuqlar</a>
-            <a href="#services" data-slide="5">Privilegiyalar</a>
+            <a href="#services" data-slide="5">Nega ZUDI? (AI Tahlil)</a>
             <a href="#gallery" data-slide="6">Lookbook</a>
             <a href="#contact" data-slide="7">Butik</a>
         </div>
@@ -138,6 +138,10 @@
                     <button class="btn-primary" onclick="goToSlide(2)">
                         <span>Kolleksiyani Kashf Qiling</span>
                         <i class="fas fa-arrow-right"></i>
+                    </button>
+                    <button class="btn-advisor-hero" onclick="goToSlide(5); switchWhyTab('ai');">
+                        <i class="fas fa-robot"></i>
+                        <span>Nega ZUDI? (AI Tahlil)</span>
                     </button>
                     <a href="https://www.instagram.com/zudi_cosmetics/" target="_blank" class="btn-outline">
                         <i class="fab fa-instagram"></i>
@@ -434,71 +438,229 @@
             </div>
         </section>
 
-        <!-- SLIDE 6: Services (Client Privileges) -->
+        <!-- SLIDE 6: Why Choose ZUDI (Nega Aynan ZUDI? • Comparison Matrix & AI Beauty Advisor) -->
         <section class="slide" id="services" data-index="5">
             <div class="slide-bg services-bg"></div>
             <div class="slide-content services-content">
                 <div class="services-header">
-                    <span class="section-tag animate-on-enter">PRIVILÈGES EXCLUSIFS</span>
-                    <h2 class="section-title animate-on-enter delay-1">Eksklyuziv <span class="title-highlight">Xizmatlar</span></h2>
-                    <p class="section-desc animate-on-enter delay-2">Har bir tashrifingiz va xaridingiz unutilmas zavq bag'ishlashi uchun</p>
+                    <span class="section-tag animate-on-enter">POURQUOI ZUDI? • SUN'IY INTELLEKT & EKSPERT TAHLILI</span>
+                    <h2 class="section-title animate-on-enter delay-1">Nega Aynan <span class="title-highlight">ZUDI Cosmetics?</span></h2>
+                    <p class="section-desc animate-on-enter delay-2">Mijozlarimiz nega oddiy bozor va do'konlarni emas, aynan bizni tanlashadi? Sun'iy intellekt va ilmiy estetika asosidagi qat'iy sabablar</p>
                 </div>
-                <div class="services-grid">
-                    <div class="service-card animate-on-enter delay-1">
-                        <span class="service-privilege-badge">PRIVILEGE I</span>
-                        <div class="service-icon-wrap">
-                            <div class="service-icon"><i class="fas fa-store"></i></div>
-                            <div class="service-glow"></div>
+
+                <!-- Luxury Interactive Tabs -->
+                <div class="why-tabs-bar animate-on-enter delay-2">
+                    <button class="why-tab-btn active" onclick="switchWhyTab('matrix')" id="wtab-matrix">
+                        <i class="fas fa-balance-scale"></i>
+                        <span>Oddiy Do'konlar vs ZUDI</span>
+                        <span class="tab-highlight-tag">5 Asosiy Farq</span>
+                    </button>
+                    <button class="why-tab-btn" onclick="switchWhyTab('ai')" id="wtab-ai">
+                        <i class="fas fa-robot"></i>
+                        <span>Smart AI Estetist</span>
+                        <span class="tab-ai-badge"><i class="fas fa-sparkles"></i> Sun'iy Tahlil</span>
+                    </button>
+                    <button class="why-tab-btn" onclick="switchWhyTab('privileges')" id="wtab-privileges">
+                        <i class="fas fa-crown"></i>
+                        <span>4 Ta Flagship Imtiyoz</span>
+                    </button>
+                </div>
+
+                <!-- Tab 1: Comparison Matrix (Oddiy Do'konlar vs ZUDI Cosmetics) -->
+                <div class="why-tab-panel active" id="wpanel-matrix">
+                    <div class="comparison-matrix-grid">
+                        <div class="cmp-card">
+                            <div class="cmp-header">
+                                <span class="cmp-num">01</span>
+                                <h4>100% Asllik & Kelib Chiqish</h4>
+                            </div>
+                            <div class="cmp-vs-row">
+                                <div class="cmp-side bad">
+                                    <div class="side-tag"><i class="fas fa-times-circle"></i> Oddiy Do'konlar</div>
+                                    <p>Dubay yoki Xitoy replikalari (poddelka), terida toshma va allergiyaga sabab bo'luvchi arzon nusxalar xavfi.</p>
+                                </div>
+                                <div class="cmp-divider"><i class="fas fa-bolt"></i></div>
+                                <div class="cmp-side good">
+                                    <div class="side-tag"><i class="fas fa-check-circle"></i> ZUDI Cosmetics</div>
+                                    <p>Bevosita Janubiy Koreya (Seul) va Fransiya laboratoriyalaridan rasmiy partiyalar. QR-kodli kafolat.</p>
+                                </div>
+                            </div>
                         </div>
-                        <h3>Flagship Boutique</h3>
-                        <p>Nafis va zamonaviy do'konimizda barcha mahsulotlarni bevosita sinab ko'rish imkoniyati</p>
-                        <ul class="service-features">
-                            <li><i class="fas fa-check"></i> Eksklyuziv testerlar</li>
-                            <li><i class="fas fa-check"></i> Qulay shaxsiy muhit</li>
-                            <li><i class="fas fa-check"></i> Professional konsyerj</li>
-                        </ul>
+
+                        <div class="cmp-card">
+                            <div class="cmp-header">
+                                <span class="cmp-num">02</span>
+                                <h4>Shaxsiy Estetist Maslahati</h4>
+                            </div>
+                            <div class="cmp-vs-row">
+                                <div class="cmp-side bad">
+                                    <div class="side-tag"><i class="fas fa-times-circle"></i> Oddiy Do'konlar</div>
+                                    <p>Tarkibni bilmaydigan oddiy sotuvchi — maqsadi faqat qimmatroq mahsulotni o'tkazish.</p>
+                                </div>
+                                <div class="cmp-divider"><i class="fas fa-bolt"></i></div>
+                                <div class="cmp-side good">
+                                    <div class="side-tag"><i class="fas fa-check-circle"></i> ZUDI Cosmetics</div>
+                                    <p>Chiroy estetisti Zufarova Dilnozaning ilmiy yondashuvi — terining turi va muammosiga mos bepul diagnostika.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="cmp-card">
+                            <div class="cmp-header">
+                                <span class="cmp-num">03</span>
+                                <h4>Noyob Selektiv Otlivantlar</h4>
+                            </div>
+                            <div class="cmp-vs-row">
+                                <div class="cmp-side bad">
+                                    <div class="side-tag"><i class="fas fa-times-circle"></i> Oddiy Do'konlar</div>
+                                    <p>Faqat 100ml butun flakon sotiladi ($200-$400). Agar ifor yoqmasa, pul bekorga ketadi.</p>
+                                </div>
+                                <div class="cmp-divider"><i class="fas fa-bolt"></i></div>
+                                <div class="cmp-side good">
+                                    <div class="side-tag"><i class="fas fa-check-circle"></i> ZUDI Cosmetics</div>
+                                    <p>3ml, 5ml, 10ml, 15ml original selektiv otlivantlar (Baccarat, Ganymede). Kichik summaga o'zingizni kashf qilasiz.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="cmp-card">
+                            <div class="cmp-header">
+                                <span class="cmp-num">04</span>
+                                <h4>Harorat & Saqlash Nazorati</h4>
+                            </div>
+                            <div class="cmp-vs-row">
+                                <div class="cmp-side bad">
+                                    <div class="side-tag"><i class="fas fa-times-circle"></i> Oddiy Do'konlar</div>
+                                    <p>Quyosh tushadigan oynalar ortida, issiqda saqlangan kremlar — faol moddalari o'lib bo'lgan bo'ladi.</p>
+                                </div>
+                                <div class="cmp-divider"><i class="fas fa-bolt"></i></div>
+                                <div class="cmp-side good">
+                                    <div class="side-tag"><i class="fas fa-check-circle"></i> ZUDI Cosmetics</div>
+                                    <p>Maxsus mikroklimat (18-22°C), qorong'i va salqin butik sharoiti. Centella va peptidlar 100% tirik ishlaydi.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="cmp-card">
+                            <div class="cmp-header">
+                                <span class="cmp-num">05</span>
+                                <h4>Natija Kafolati & VIP Yetkazish</h4>
+                            </div>
+                            <div class="cmp-vs-row">
+                                <div class="cmp-side bad">
+                                    <div class="side-tag"><i class="fas fa-times-circle"></i> Oddiy Do'konlar</div>
+                                    <p>Oddiy sellofan paket, mahsulot sinib borishi mumkin, xariddan keyin aloqa yo'qoladi.</p>
+                                </div>
+                                <div class="cmp-divider"><i class="fas fa-bolt"></i></div>
+                                <div class="cmp-side good">
+                                    <div class="side-tag"><i class="fas fa-check-circle"></i> ZUDI Cosmetics</div>
+                                    <p>Eksklyuziv sovg'abop qutilar, Toshkent bo'ylab 1 kunda yetkazish va xariddan keyingi doimiy qo'llab-quvvatlash.</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="service-card animate-on-enter delay-2">
-                        <span class="service-privilege-badge">PRIVILEGE II</span>
-                        <div class="service-icon-wrap">
-                            <div class="service-icon"><i class="fas fa-laptop"></i></div>
-                            <div class="service-glow"></div>
+                </div>
+
+                <!-- Tab 2: Smart AI Beauty Advisor (Sun'iy Intellekt Tahlili) -->
+                <div class="why-tab-panel" id="wpanel-ai">
+                    <div class="ai-advisor-container">
+                        <div class="ai-advisor-header">
+                            <div class="ai-bot-avatar">
+                                <i class="fas fa-robot"></i>
+                                <span class="ai-pulse-dot"></span>
+                            </div>
+                            <div class="ai-bot-info">
+                                <h3>ZUDI AI Smart Estetist</h3>
+                                <p>Terining ehtiyojini tanlang — sun'iy intellekt nega aynan ZUDI sizga eng to'g'ri tanlov ekanini ilmiy asoslab beradi</p>
+                            </div>
                         </div>
-                        <h3>Digital Flagship</h3>
-                        <p>Uydan chiqmasdan istalgan vaqtda buyurtma bering — onlayn butikimiz 24/7 xizmatingizda</p>
-                        <ul class="service-features">
-                            <li><i class="fas fa-check"></i> 24/7 onlayn xarid</li>
-                            <li><i class="fas fa-check"></i> Xavfsiz tezkor to'lov</li>
-                            <li><i class="fas fa-check"></i> Shaxsiy menejer nazorati</li>
-                        </ul>
+
+                        <!-- 4 Interactive Goal Chips -->
+                        <div class="ai-goal-chips">
+                            <button class="ai-chip active" onclick="runAiAnalysis('glass-skin')" id="chip-glass-skin">
+                                <i class="fas fa-tint"></i>
+                                <span>1. Tiniq Nurli Teri (Glass Skin)</span>
+                            </button>
+                            <button class="ai-chip" onclick="runAiAnalysis('acne-pores')" id="chip-acne-pores">
+                                <i class="fas fa-shield-virus"></i>
+                                <span>2. Akne, Qizarish & Poralarni Yo'qotish</span>
+                            </button>
+                            <button class="ai-chip" onclick="runAiAnalysis('niche-sillage')" id="chip-niche-sillage">
+                                <i class="fas fa-wind"></i>
+                                <span>3. 24 Soatlik Shleyfli Selektiv Ifor</span>
+                            </button>
+                            <button class="ai-chip" onclick="runAiAnalysis('velvet-makeup')" id="chip-velvet-makeup">
+                                <i class="fas fa-feather"></i>
+                                <span>4. Baxmal & Yoshartiruvchi Makiyaj</span>
+                            </button>
+                        </div>
+
+                        <!-- Dynamic AI Analysis Display Card -->
+                        <div class="ai-result-card" id="ai-result-card">
+                            <!-- Populated dynamically by JavaScript -->
+                        </div>
                     </div>
-                    <div class="service-card animate-on-enter delay-3">
-                        <span class="service-privilege-badge">PRIVILEGE III</span>
-                        <div class="service-icon-wrap">
-                            <div class="service-icon"><i class="fas fa-user-md"></i></div>
-                            <div class="service-glow"></div>
+                </div>
+
+                <!-- Tab 3: Privileges (4 Core Flagship Services) -->
+                <div class="why-tab-panel" id="wpanel-privileges">
+                    <div class="services-grid">
+                        <div class="service-card animate-on-enter delay-1">
+                            <span class="service-privilege-badge">PRIVILEGE I</span>
+                            <div class="service-icon-wrap">
+                                <div class="service-icon"><i class="fas fa-store"></i></div>
+                                <div class="service-glow"></div>
+                            </div>
+                            <h3>Flagship Boutique</h3>
+                            <p>Nafis va zamonaviy do'konimizda barcha mahsulotlarni bevosita sinab ko'rish imkoniyati</p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check"></i> Eksklyuziv testerlar</li>
+                                <li><i class="fas fa-check"></i> Qulay shaxsiy muhit</li>
+                                <li><i class="fas fa-check"></i> Professional konsyerj</li>
+                            </ul>
                         </div>
-                        <h3>Chiroy Diagnostikasi</h3>
-                        <p>Chiroy estetisti tomonidan terining individual turi tahlil qilinadi va to'g'ri reja tuziladi</p>
-                        <ul class="service-features">
-                            <li><i class="fas fa-check"></i> Terining ehtiyojlarini aniqlash</li>
-                            <li><i class="fas fa-check"></i> Shaxsiy parvarish rejasi</li>
-                            <li><i class="fas fa-check"></i> Natijani doimiy kuzatish</li>
-                        </ul>
-                    </div>
-                    <div class="service-card animate-on-enter delay-4">
-                        <span class="service-privilege-badge">PRIVILEGE IV</span>
-                        <div class="service-icon-wrap">
-                            <div class="service-icon"><i class="fas fa-shipping-fast"></i></div>
-                            <div class="service-glow"></div>
+                        <div class="service-card animate-on-enter delay-2">
+                            <span class="service-privilege-badge">PRIVILEGE II</span>
+                            <div class="service-icon-wrap">
+                                <div class="service-icon"><i class="fas fa-laptop"></i></div>
+                                <div class="service-glow"></div>
+                            </div>
+                            <h3>Digital Flagship</h3>
+                            <p>Uydan chiqmasdan istalgan vaqtda buyurtma bering — onlayn butikimiz 24/7 xizmatingizda</p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check"></i> 24/7 onlayn xarid</li>
+                                <li><i class="fas fa-check"></i> Xavfsiz tezkor to'lov</li>
+                                <li><i class="fas fa-check"></i> Shaxsiy menejer nazorati</li>
+                            </ul>
                         </div>
-                        <h3>White-Glove Delivery</h3>
-                        <p>O'zbekiston bo'ylab o'ta ehtiyotkor, sovg'abop qadoqda ishonchli yetkazib berish xizmati</p>
-                        <ul class="service-features">
-                            <li><i class="fas fa-check"></i> Toshkent — 1 kunda yetkazish</li>
-                            <li><i class="fas fa-check"></i> Viloyatlar — 2-3 kunda ekspress</li>
-                            <li><i class="fas fa-check"></i> Eksklyuziv sovg'a qutisi</li>
-                        </ul>
+                        <div class="service-card animate-on-enter delay-3">
+                            <span class="service-privilege-badge">PRIVILEGE III</span>
+                            <div class="service-icon-wrap">
+                                <div class="service-icon"><i class="fas fa-user-md"></i></div>
+                                <div class="service-glow"></div>
+                            </div>
+                            <h3>Chiroy Diagnostikasi</h3>
+                            <p>Chiroy estetisti tomonidan terining individual turi tahlil qilinadi va to'g'ri reja tuziladi</p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check"></i> Terining ehtiyojlarini aniqlash</li>
+                                <li><i class="fas fa-check"></i> Shaxsiy parvarish rejasi</li>
+                                <li><i class="fas fa-check"></i> Natijani doimiy kuzatish</li>
+                            </ul>
+                        </div>
+                        <div class="service-card animate-on-enter delay-4">
+                            <span class="service-privilege-badge">PRIVILEGE IV</span>
+                            <div class="service-icon-wrap">
+                                <div class="service-icon"><i class="fas fa-shipping-fast"></i></div>
+                                <div class="service-glow"></div>
+                            </div>
+                            <h3>White-Glove Delivery</h3>
+                            <p>O'zbekiston bo'ylab o'ta ehtiyotkor, sovg'abop qadoqda ishonchli yetkazib berish xizmati</p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check"></i> Toshkent — 1 kunda yetkazish</li>
+                                <li><i class="fas fa-check"></i> Viloyatlar — 2-3 kunda ekspress</li>
+                                <li><i class="fas fa-check"></i> Eksklyuziv sovg'a qutisi</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -715,9 +877,9 @@
                 </div>
                 <div class="overview-card" data-slide="5">
                     <span class="ov-badge">06</span>
-                    <div class="ov-icon"><i class="fas fa-concierge-bell"></i></div>
-                    <h4>Privilegiyalar</h4>
-                    <p>Flagship, Online & Maslahat</p>
+                    <div class="ov-icon"><i class="fas fa-robot"></i></div>
+                    <h4>Nega ZUDI?</h4>
+                    <p>Farqlar, AI Tahlil & Imtiyozlar</p>
                 </div>
                 <div class="overview-card" data-slide="6">
                     <span class="ov-badge">07</span>
