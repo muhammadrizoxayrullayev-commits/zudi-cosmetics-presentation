@@ -243,12 +243,13 @@
                     <p class="section-desc animate-on-enter delay-2">Dunyodagi eng talabchan go'zallik standartlariga javob beruvchi kolleksiya</p>
                 </div>
                 <div class="products-showcase">
-                    <div class="product-card animate-on-enter delay-1">
+                    <div class="product-card animate-on-enter delay-1" onclick="openProductDetail('skincare')">
                         <div class="product-img-wrapper">
                             <img src="products_display.jpg" alt="Soins du Visage">
                             <div class="product-overlay">
                                 <span class="product-tag">Curation No. 01</span>
                             </div>
+                            <div class="product-hover-glow"></div>
                         </div>
                         <div class="product-info">
                             <span class="product-dept">K-BEAUTY & CLINICAL</span>
@@ -258,14 +259,19 @@
                                 <span>Centella Glow</span>
                                 <span>Hydra Deep</span>
                             </div>
+                            <div class="product-click-cta">
+                                <span><i class="fas fa-sparkles"></i> Tarkibi & To'liq Ma'lumot</span>
+                                <i class="fas fa-arrow-right cta-arrow"></i>
+                            </div>
                         </div>
                     </div>
-                    <div class="product-card animate-on-enter delay-2">
+                    <div class="product-card animate-on-enter delay-2" onclick="openProductDetail('makeup')">
                         <div class="product-img-wrapper">
                             <img src="makeup_collection.jpg" alt="Le Maquillage">
                             <div class="product-overlay">
                                 <span class="product-tag">Curation No. 02</span>
                             </div>
+                            <div class="product-hover-glow"></div>
                         </div>
                         <div class="product-info">
                             <span class="product-dept">HAUTE COUTURE MAKEUP</span>
@@ -275,14 +281,19 @@
                                 <span>Velvet Matte</span>
                                 <span>Satin Glow</span>
                             </div>
+                            <div class="product-click-cta">
+                                <span><i class="fas fa-sparkles"></i> Tarkibi & To'liq Ma'lumot</span>
+                                <i class="fas fa-arrow-right cta-arrow"></i>
+                            </div>
                         </div>
                     </div>
-                    <div class="product-card animate-on-enter delay-3">
+                    <div class="product-card animate-on-enter delay-3" onclick="openProductDetail('perfume')">
                         <div class="product-img-wrapper">
                             <img src="perfumery.jpg" alt="Haute Parfumerie">
                             <div class="product-overlay">
                                 <span class="product-tag">Curation No. 03</span>
                             </div>
+                            <div class="product-hover-glow"></div>
                         </div>
                         <div class="product-info">
                             <span class="product-dept">NICHE & SELECTIVE</span>
@@ -291,6 +302,10 @@
                             <div class="product-brands">
                                 <span>Niche Exclusive</span>
                                 <span>Long Sillage</span>
+                            </div>
+                            <div class="product-click-cta">
+                                <span><i class="fas fa-sparkles"></i> Notalar & Otlivantlar</span>
+                                <i class="fas fa-arrow-right cta-arrow"></i>
                             </div>
                         </div>
                     </div>
@@ -308,59 +323,59 @@
                     <p class="section-desc animate-on-enter delay-2">Butikimizning har bir bo'limi alohida nafosat falsafasiga asoslangan</p>
                 </div>
                 <div class="categories-grid">
-                    <div class="category-tile animate-on-enter delay-1">
+                    <div class="category-tile animate-on-enter delay-1" onclick="openProductDetail('cat-skincare')">
                         <div class="tile-top">
                             <span class="tile-number">01</span>
                             <div class="tile-icon"><i class="fas fa-spa"></i></div>
                         </div>
                         <h3>Soins Essentiels</h3>
                         <p>Terini chuqur tozalash, nemlantirish va yoshartiruvchi dermokosmetika</p>
-                        <span class="tile-link">Batafsil <i class="fas fa-angle-right"></i></span>
+                        <span class="tile-link">Batafsil ma'lumot <i class="fas fa-angle-right"></i></span>
                     </div>
-                    <div class="category-tile animate-on-enter delay-2">
+                    <div class="category-tile animate-on-enter delay-2" onclick="openProductDetail('cat-makeup')">
                         <div class="tile-top">
                             <span class="tile-number">02</span>
                             <div class="tile-icon"><i class="fas fa-paint-brush"></i></div>
                         </div>
                         <h3>Couture Makeup</h3>
                         <p>Yuqori pigmentli baxmal lab bo'yoqlari, tonal kremlar va tenlar</p>
-                        <span class="tile-link">Batafsil <i class="fas fa-angle-right"></i></span>
+                        <span class="tile-link">Batafsil ma'lumot <i class="fas fa-angle-right"></i></span>
                     </div>
-                    <div class="category-tile animate-on-enter delay-3">
+                    <div class="category-tile animate-on-enter delay-3" onclick="openProductDetail('cat-kbeauty')">
                         <div class="tile-top">
                             <span class="tile-number">03</span>
                             <div class="tile-icon"><i class="fas fa-flask"></i></div>
                         </div>
                         <h3>K-Beauty Revolution</h3>
                         <p>Dunyoni lol qoldirgan Koreys "Glass Skin" formulasining sir-asrorlari</p>
-                        <span class="tile-link">Batafsil <i class="fas fa-angle-right"></i></span>
+                        <span class="tile-link">Batafsil ma'lumot <i class="fas fa-angle-right"></i></span>
                     </div>
-                    <div class="category-tile animate-on-enter delay-4">
+                    <div class="category-tile animate-on-enter delay-4" onclick="openProductDetail('cat-perfume')">
                         <div class="tile-top">
                             <span class="tile-number">04</span>
                             <div class="tile-icon"><i class="fas fa-wind"></i></div>
                         </div>
                         <h3>Parfumerie Niche</h3>
                         <p>Shaxsiyatni ifodalovchi noyob selektiv va fransuz atirlar kolleksiyasi</p>
-                        <span class="tile-link">Batafsil <i class="fas fa-angle-right"></i></span>
+                        <span class="tile-link">Batafsil ma'lumot <i class="fas fa-angle-right"></i></span>
                     </div>
-                    <div class="category-tile animate-on-enter delay-5">
+                    <div class="category-tile animate-on-enter delay-5" onclick="openProductDetail('cat-botanical')">
                         <div class="tile-top">
                             <span class="tile-number">05</span>
                             <div class="tile-icon"><i class="fas fa-leaf"></i></div>
                         </div>
                         <h3>Botanical Beauty</h3>
                         <p>Belarus va Yevropaning eng sara tabiiy va bio-organik seriyalari</p>
-                        <span class="tile-link">Batafsil <i class="fas fa-angle-right"></i></span>
+                        <span class="tile-link">Batafsil ma'lumot <i class="fas fa-angle-right"></i></span>
                     </div>
-                    <div class="category-tile animate-on-enter delay-6">
+                    <div class="category-tile animate-on-enter delay-6" onclick="openProductDetail('cat-tools')">
                         <div class="tile-top">
                             <span class="tile-number">06</span>
                             <div class="tile-icon"><i class="fas fa-magic"></i></div>
                         </div>
                         <h3>Atelier Accessoires</h3>
                         <p>Professional vizaj cho'tkalari va estetik asbob-uskunalar</p>
-                        <span class="tile-link">Batafsil <i class="fas fa-angle-right"></i></span>
+                        <span class="tile-link">Batafsil ma'lumot <i class="fas fa-angle-right"></i></span>
                     </div>
                 </div>
             </div>
@@ -499,46 +514,52 @@
                     <p class="section-desc animate-on-enter delay-2">Do'konimiz hayoti, mahsulotlar estetikasi va go'zallik lahzalari</p>
                 </div>
                 <div class="gallery-mosaic animate-on-enter delay-2">
-                    <div class="gallery-item gi-1">
+                    <div class="gallery-item gi-1" onclick="openProductDetail('lookbook-1')">
                         <img src="store_interior.jpg" alt="Flagship Boutique Interior">
                         <div class="gallery-item-overlay">
                             <span class="lookbook-tag">FLAGSHIP ATMOSPHERE</span>
                             <h4>Boutique Interieri</h4>
+                            <span class="lookbook-click-hint"><i class="fas fa-plus"></i> Batafsil ko'rish</span>
                         </div>
                     </div>
-                    <div class="gallery-item gi-2">
+                    <div class="gallery-item gi-2" onclick="openProductDetail('skincare')">
                         <img src="products_display.jpg" alt="Clinical Skincare">
                         <div class="gallery-item-overlay">
                             <span class="lookbook-tag">SKINCARE HAUTE</span>
                             <h4>Dermokosmetika</h4>
+                            <span class="lookbook-click-hint"><i class="fas fa-plus"></i> Batafsil ko'rish</span>
                         </div>
                     </div>
-                    <div class="gallery-item gi-3">
+                    <div class="gallery-item gi-3" onclick="openProductDetail('cat-kbeauty')">
                         <img src="korean_beauty.jpg" alt="K-Beauty Glow">
                         <div class="gallery-item-overlay">
                             <span class="lookbook-tag">K-BEAUTY GLOW</span>
                             <h4>Koreys Estetikasi</h4>
+                            <span class="lookbook-click-hint"><i class="fas fa-plus"></i> Batafsil ko'rish</span>
                         </div>
                     </div>
-                    <div class="gallery-item gi-4">
+                    <div class="gallery-item gi-4" onclick="openProductDetail('makeup')">
                         <img src="makeup_collection.jpg" alt="Couture Makeup">
                         <div class="gallery-item-overlay">
                             <span class="lookbook-tag">LE MAQUILLAGE</span>
                             <h4>Dekorativ Kolleksiya</h4>
+                            <span class="lookbook-click-hint"><i class="fas fa-plus"></i> Batafsil ko'rish</span>
                         </div>
                     </div>
-                    <div class="gallery-item gi-5">
+                    <div class="gallery-item gi-5" onclick="openProductDetail('perfume')">
                         <img src="perfumery.jpg" alt="Selective Perfumes">
                         <div class="gallery-item-overlay">
                             <span class="lookbook-tag">NICHE EXTRACTS</span>
                             <h4>Selektiv Parfyumeriya</h4>
+                            <span class="lookbook-click-hint"><i class="fas fa-plus"></i> Batafsil ko'rish</span>
                         </div>
                     </div>
-                    <div class="gallery-item gi-6">
+                    <div class="gallery-item gi-6" onclick="openProductDetail('lookbook-6')">
                         <img src="beauty_model.jpg" alt="Radiant Beauty">
                         <div class="gallery-item-overlay">
                             <span class="lookbook-tag">ICONIC ELEGANCE</span>
                             <h4>Nafosat Timsoli</h4>
+                            <span class="lookbook-click-hint"><i class="fas fa-plus"></i> Batafsil ko'rish</span>
                         </div>
                     </div>
                 </div>
@@ -713,6 +734,19 @@
             </div>
             <div class="overview-footer">
                 <span>💡 Klaviaturada <strong>[M]</strong> xarita, <strong>[F]</strong> to'liq ekran</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Luxury Product Detail Modal (Haute Beauté Inspection) -->
+    <div id="product-detail-modal" class="product-detail-modal">
+        <div class="pdm-backdrop" id="pdm-backdrop"></div>
+        <div class="pdm-container">
+            <button id="pdm-close" class="pdm-close-btn" title="Yopish (ESC)">
+                <i class="fas fa-times"></i>
+            </button>
+            <div id="pdm-body" class="pdm-body">
+                <!-- Dynamically loaded by JavaScript -->
             </div>
         </div>
     </div>
