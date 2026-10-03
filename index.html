@@ -23,13 +23,9 @@
         </div>
     </div>
 
-    <!-- Cursor -->
-    <div class="custom-cursor"></div>
-    <div class="cursor-follower"></div>
-
     <!-- Navigation -->
     <nav id="main-nav">
-        <div class="nav-logo">
+        <div class="nav-logo" onclick="goToSlide(0)" style="cursor: pointer;">
             <img src="logo.png" alt="ZUDI" class="nav-logo-img">
         </div>
         <div class="nav-links">
@@ -42,8 +38,19 @@
             <a href="#gallery" class="nav-link" data-slide="6">Galereya</a>
             <a href="#contact" class="nav-link" data-slide="7">Aloqa</a>
         </div>
-        <div class="nav-social">
-            <a href="https://www.instagram.com/zudi_cosmetics/" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+        <div class="nav-actions">
+            <button id="btn-sound" class="nav-action-btn" title="Ovozni yoqish/o'chirish (S)">
+                <i class="fas fa-volume-up"></i>
+            </button>
+            <button id="btn-overview" class="nav-action-btn" title="Barcha slaydlar menyusi (M)">
+                <i class="fas fa-th-large"></i>
+            </button>
+            <button id="btn-fullscreen" class="nav-action-btn" title="To'liq ekran rejimi (F)">
+                <i class="fas fa-expand"></i>
+            </button>
+            <a href="https://www.instagram.com/zudi_cosmetics/" target="_blank" class="social-icon" title="Instagram @zudi_cosmetics">
+                <i class="fab fa-instagram"></i>
+            </a>
         </div>
         <div class="hamburger" id="hamburger">
             <span></span>
@@ -548,6 +555,86 @@
         <div class="dot" data-slide="5"></div>
         <div class="dot" data-slide="6"></div>
         <div class="dot" data-slide="7"></div>
+    </div>
+
+    <!-- Slide Overview Modal (Grid Map) -->
+    <div id="overview-modal" class="overview-modal">
+        <div class="overview-backdrop" id="overview-backdrop"></div>
+        <div class="overview-container">
+            <div class="overview-header">
+                <div class="overview-title-wrap">
+                    <img src="logo.png" alt="ZUDI" class="overview-logo">
+                    <div>
+                        <h3>Slaydlar Xaritasi</h3>
+                        <p>Istalgan bo'limga tezkor o'tish</p>
+                    </div>
+                </div>
+                <button id="overview-close" class="overview-close-btn" title="Yopish (ESC)">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="overview-grid">
+                <div class="overview-card active" data-slide="0">
+                    <span class="ov-badge">01</span>
+                    <div class="ov-icon"><i class="fas fa-play"></i></div>
+                    <h4>Bosh sahifa</h4>
+                    <p>Go'zallik San'ati & Video</p>
+                </div>
+                <div class="overview-card" data-slide="1">
+                    <span class="ov-badge">02</span>
+                    <div class="ov-icon"><i class="fas fa-sparkles"></i></div>
+                    <h4>Biz haqimizda</h4>
+                    <p>Zufarova Dilnoza</p>
+                </div>
+                <div class="overview-card" data-slide="2">
+                    <span class="ov-badge">03</span>
+                    <div class="ov-icon"><i class="fas fa-gem"></i></div>
+                    <h4>Mahsulotlar</h4>
+                    <p>Bestseller Brendlar</p>
+                </div>
+                <div class="overview-card" data-slide="3">
+                    <span class="ov-badge">04</span>
+                    <div class="ov-icon"><i class="fas fa-th-large"></i></div>
+                    <h4>Kategoriyalar</h4>
+                    <p>6 ta asosiy yo'nalish</p>
+                </div>
+                <div class="overview-card" data-slide="4">
+                    <span class="ov-badge">05</span>
+                    <div class="ov-icon"><i class="fas fa-chart-line"></i></div>
+                    <h4>Raqamlar</h4>
+                    <p>29K+ Obunachilar & Yutuqlar</p>
+                </div>
+                <div class="overview-card" data-slide="5">
+                    <span class="ov-badge">06</span>
+                    <div class="ov-icon"><i class="fas fa-concierge-bell"></i></div>
+                    <h4>Xizmatlar</h4>
+                    <p>Retail, Online & Maslahat</p>
+                </div>
+                <div class="overview-card" data-slide="6">
+                    <span class="ov-badge">07</span>
+                    <div class="ov-icon"><i class="fas fa-images"></i></div>
+                    <h4>Galereya</h4>
+                    <p>Go'zallik Dunyosi</p>
+                </div>
+                <div class="overview-card" data-slide="7">
+                    <span class="ov-badge">08</span>
+                    <div class="ov-icon"><i class="fab fa-instagram"></i></div>
+                    <h4>Bog'lanish</h4>
+                    <p>Instagram & Aloqa</p>
+                </div>
+            </div>
+            <div class="overview-footer">
+                <span>💡 Klaviaturada <strong>[M]</strong> xarita, <strong>[F]</strong> to'liq ekran, <strong>[S]</strong> ovoz</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quick Keyboard HUD Hints -->
+    <div class="keyboard-hints">
+        <span class="hint-item"><kbd>↑</kbd><kbd>↓</kbd> Navigatsiya</span>
+        <span class="hint-item"><kbd>M</kbd> Xarita</span>
+        <span class="hint-item"><kbd>F</kbd> Ekran</span>
+        <span class="hint-item"><kbd>S</kbd> Ovoz</span>
     </div>
 
     <script src="script.js"></script>
