@@ -25,16 +25,41 @@
     const mobileMenu = document.getElementById('mobile-menu');
     const preloader = document.getElementById('preloader');
 
-    // ===== Preloader =====
-    window.addEventListener('load', function() {
-        setTimeout(function() {
+    // ===== Preloader & Init =====
+    let isInitialized = false;
+    function initPresentation() {
+        if (isInitialized) return;
+        isInitialized = true;
+        if (preloader) {
             preloader.classList.add('hidden');
-            // Activate first slide
-            goToSlide(0);
-            // Start particles
-            createParticles();
-        }, 2800);
+        }
+        goToSlide(0, true);
+        createParticles();
+
+        // Autoplay background video smoothly
+        const heroVideo = document.getElementById('hero-bg-video');
+        if (heroVideo) {
+            var playPromise = heroVideo.play();
+            if (playPromise !== undefined) {
+                playPromise.catch(function() {
+                    document.addEventListener('click', function playOnce() {
+                        heroVideo.play().catch(function() {});
+                    }, { once: true });
+                });
+            }
+        }
+    }
+
+    window.addEventListener('load', function() {
+        setTimeout(initPresentation, 800);
     });
+
+    // Safety timeout in case load event takes longer
+    setTimeout(initPresentation, 1800);
+
+    if (preloader) {
+        preloader.addEventListener('click', initPresentation);
+    }
 
     // ===== Custom Cursor =====
     const cursor = document.querySelector('.custom-cursor');
@@ -71,18 +96,22 @@
     }
 
     // ===== Slide Navigation =====
-    function goToSlide(index) {
-        if (isAnimating || index === currentSlide || index < 0 || index >= totalSlides) return;
+    function goToSlide(index, force) {
+        if (!force && (isAnimating || index === currentSlide || index < 0 || index >= totalSlides)) return;
         isAnimating = true;
 
-        // Deactivate current slide
-        slides[currentSlide].classList.remove('active');
-        
+        // Deactivate all slides
+        slides.forEach(function(s) {
+            s.classList.remove('active');
+        });
+
         // Update index
         currentSlide = index;
 
         // Activate new slide
-        slides[currentSlide].classList.add('active');
+        if (slides[currentSlide]) {
+            slides[currentSlide].classList.add('active');
+        }
 
         // Update UI elements
         updateUI();
@@ -90,10 +119,6 @@
         // Animate stats if on stats slide
         if (currentSlide === 4) {
             animateStats();
-        }
-
-        // Animate stat fills
-        if (currentSlide === 4) {
             animateStatFills();
         }
 
