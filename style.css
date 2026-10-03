@@ -1453,8 +1453,18 @@ a, button {
 /* =========================================================
    SLIDE 6: WHY ZUDI (Comparison Matrix & AI Beauty Advisor)
    ========================================================= */
+.services-content {
+    justify-content: flex-start !important;
+    padding: 85px 40px 30px !important;
+    overflow-y: auto !important;
+    max-height: 100vh;
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent-gold) rgba(0, 0, 0, 0.3);
+}
+
 .services-header {
-    margin-bottom: 22px;
+    margin-bottom: 18px;
+    text-align: center;
 }
 
 /* Luxury Interactive Tabs */
@@ -1463,7 +1473,7 @@ a, button {
     align-items: center;
     justify-content: center;
     gap: 12px;
-    margin-bottom: 22px;
+    margin-bottom: 20px;
     flex-wrap: wrap;
 }
 
@@ -1471,7 +1481,7 @@ a, button {
     display: inline-flex;
     align-items: center;
     gap: 9px;
-    padding: 10px 20px;
+    padding: 10px 22px;
     background: rgba(255, 255, 255, 0.04);
     border: 1px solid var(--border-gold);
     border-radius: var(--radius-full);
@@ -1485,17 +1495,17 @@ a, button {
 }
 
 .why-tab-btn:hover {
-    background: rgba(201, 155, 102, 0.12);
+    background: rgba(201, 155, 102, 0.14);
     border-color: var(--border-gold-bright);
     color: #ffffff;
     transform: translateY(-2px);
 }
 
 .why-tab-btn.active {
-    background: linear-gradient(135deg, rgba(201, 155, 102, 0.35) 0%, rgba(201, 155, 102, 0.12) 100%);
+    background: linear-gradient(135deg, rgba(201, 155, 102, 0.38) 0%, rgba(201, 155, 102, 0.15) 100%);
     border-color: var(--accent-gold);
     color: #ffffff;
-    box-shadow: 0 8px 24px rgba(201, 155, 102, 0.25);
+    box-shadow: 0 8px 24px rgba(201, 155, 102, 0.3);
 }
 
 .tab-highlight-tag {
@@ -1526,12 +1536,12 @@ a, button {
 }
 
 .why-tab-panel {
-    display: none;
-    animation: fadeInTab 0.4s var(--ease-luxury) forwards;
+    display: none !important;
+    animation: fadeInTab 0.35s var(--ease-luxury) forwards;
 }
 
 .why-tab-panel.active {
-    display: block;
+    display: block !important;
 }
 
 @keyframes fadeInTab {
@@ -1548,13 +1558,15 @@ a, button {
 /* Comparison Matrix Grid */
 .comparison-matrix-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 14px;
-    max-height: calc(100vh - 290px);
-    overflow-y: auto;
-    padding-right: 6px;
-    scrollbar-width: thin;
-    scrollbar-color: var(--accent-gold) rgba(0, 0, 0, 0.3);
+    max-width: 1060px;
+    margin: 0 auto;
+    padding-bottom: 20px;
+}
+
+.cmp-card:nth-child(5) {
+    grid-column: span 2;
 }
 
 .cmp-card {
